@@ -12,17 +12,17 @@ export function Skills() {
 
     return (
         <section className="py-8">
-            <h2 className="text-2xl font-bold tracking-tight mb-4">Skills</h2>
+            <h2 className="text-4xl font-bold tracking-tight mb-6">Skills</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {Object.entries(skills).map(([category, items]) => (
                     <Card key={category} className="shadow-sm">
                         <CardHeader className="pb-2">
-                            <CardTitle className="text-lg">{category}</CardTitle>
+                            <CardTitle className="text-2xl">{category}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="flex flex-wrap gap-2">
                                 {items.map((item) => (
-                                    <Badge key={item} variant="secondary">
+                                    <Badge key={item} variant="secondary" className="text-base px-3 py-1">
                                         {item}
                                     </Badge>
                                 ))}

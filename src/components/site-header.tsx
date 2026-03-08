@@ -1,49 +1,42 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Mail } from "lucide-react"
 
 export function SiteHeader() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container mx-auto flex h-14 items-center px-4 md:px-6">
-                <div className="mr-4 hidden md:flex">
-                    <Link href="/" className="mr-6 flex items-center space-x-2">
-                        <span className="hidden font-bold sm:inline-block">
-                            SK
+        <header className="fixed top-0 z-50 w-full bg-background/60 backdrop-blur-md">
+            <div className="container mx-auto flex h-16 items-center justify-between px-6 md:px-12">
+                <div className="flex">
+                    <Link href="/" className="flex items-center">
+                        <span className="font-serif italic text-2xl md:text-3xl text-foreground">
+                            Shreya Komarabattini
                         </span>
                     </Link>
-                    <nav className="flex items-center space-x-6 text-sm font-medium">
-                        <Link href="/" className="transition-colors hover:text-foreground/80 text-foreground">
-                            Work
-                        </Link>
-                        <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">
-                            About
-                        </Link>
-                    </nav>
                 </div>
-                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-                    <div className="w-full flex-1 md:w-auto md:flex-none">
-                        {/* Add search or other nav items here if needed */}
-                    </div>
-                    <nav className="flex items-center">
-                        <Button asChild variant="ghost" className="h-8 w-8 px-0">
-                            <Link href="mailto:shreyakbinbox@gmail.com">
+
+                <div className="flex items-center space-x-8">
+                    <nav className="hidden md:flex items-center space-x-8 text-lg font-medium">
+                        <Link href="/#work" className="group relative transition-colors text-foreground">
+                            Projects
+                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                        </Link>
+                        <Link href="/about" className="group relative transition-colors text-foreground">
+                            About
+                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                        </Link>
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group relative transition-colors text-foreground">
+                            Resume
+                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                        </a>
+                    </nav>
+                    <div className="flex items-center">
+                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                            <Link href="mailto:shreyakbinbox@gmail.com" target="_blank" rel="noopener noreferrer">
                                 <span className="sr-only">Contact</span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="h-4 w-4"
-                                >
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
+                                <Mail className="h-4 w-4" />
                             </Link>
                         </Button>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </header>

@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ExternalLink } from "lucide-react"
 
 export function Experience() {
-    const experiences = [
+    const experiences: { title: string, company: string, advisor?: string, date: string, description: string[], link?: { url: string, label: string } }[] = [
         {
             title: "Undergraduate Researcher",
             company: "Do We Really Know How to Use Graphs Effectively",
@@ -13,7 +14,8 @@ export function Experience() {
                 "Designed user studies to evaluate visualization clarity and reduce misinterpretation by non-expert audiences.",
                 "Formulated evidence-based guidelines for selecting appropriate chart types to improve data comprehension.",
                 "Presented findings at the 28th Annual Student Research and Creative Endeavors Symposium.",
-            ]
+            ],
+            link: { url: "/PosterSample.pdf", label: "View Research Poster" }
         },
         {
             title: "Research: Fort Wayne Crimes",
@@ -67,7 +69,7 @@ export function Experience() {
 
     return (
         <section className="py-8">
-            <h2 className="text-2xl font-bold tracking-tight mb-4">Experience</h2>
+            <h2 className="text-4xl font-bold tracking-tight mb-6">Experience</h2>
             <div className="space-y-6">
                 {experiences.map((exp, index) => (
                     <div key={index} className="border-l-2 border-primary/20 pl-6 relative">
@@ -75,20 +77,33 @@ export function Experience() {
                         <Card className="border-none shadow-none bg-transparent">
                             <CardHeader className="p-0 mb-2">
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                                    <CardTitle className="text-lg font-semibold">{exp.title}</CardTitle>
-                                    {exp.date && <Badge variant="secondary" className="w-fit">{exp.date}</Badge>}
+                                    <CardTitle className="text-2xl font-semibold">{exp.title}</CardTitle>
+                                    {exp.date && <Badge variant="secondary" className="text-sm px-3 py-1 w-fit">{exp.date}</Badge>}
                                 </div>
-                                <div className="text-muted-foreground font-medium">
+                                <div className="text-muted-foreground font-medium text-xl">
                                     {exp.company}
-                                    {exp.advisor && <span className="block text-sm font-normal mt-1">{exp.advisor}</span>}
+                                    {exp.advisor && <span className="block text-lg font-normal mt-1">{exp.advisor}</span>}
                                 </div>
                             </CardHeader>
                             <CardContent className="p-0">
-                                <ul className="list-disc pl-5 space-y-1 text-sm text-muted-foreground">
+                                <ul className="list-disc pl-6 space-y-2 text-lg text-muted-foreground">
                                     {exp.description.map((desc, i) => (
                                         <li key={i}>{desc}</li>
                                     ))}
                                 </ul>
+                                {exp.link && (
+                                    <div className="mt-4">
+                                        <a
+                                            href={exp.link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-base font-medium text-foreground hover:text-primary transition-colors hover:underline"
+                                        >
+                                            <ExternalLink className="h-5 w-5" />
+                                            {exp.link.label}
+                                        </a>
+                                    </div>
+                                )}
                             </CardContent>
                         </Card>
                     </div>
