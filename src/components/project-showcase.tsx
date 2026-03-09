@@ -21,7 +21,7 @@ export function ProjectShowcase() {
             title: "HealthyCal",
             description: "A web platform designed to help users track calories and monitor their nutrition intake. It helps people stay aware of how different foods contribute to daily energy and nutrient goals, encouraging balanced and mindful eating.",
             image: "/healthycal-hp.png",
-            link: "#",
+            link: "https://healthy-cal.vercel.app",
             tags: ["React", "Vite", "Node.js", "MongoDB"]
         },
         {
@@ -63,7 +63,7 @@ export function ProjectShowcase() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="w-full lg:w-[60%] group relative drop-shadow-sm"
                             >
-                                <div className="aspect-[16/10] overflow-hidden relative w-full bg-secondary/40 border border-border/60 rounded-[2rem] flex items-center justify-center p-6 sm:p-10 lg:p-14">
+                                <div className={`aspect-[16/10] overflow-hidden relative w-full bg-secondary/40 border border-border/60 rounded-[2rem] flex items-center justify-center ${project.image === '/research-poster.png' ? 'px-6 py-12' : 'p-6 sm:p-10 lg:p-14'}`}>
                                     <div className="relative w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-out">
                                         <Image
                                             src={project.image}
