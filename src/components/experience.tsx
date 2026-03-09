@@ -25,7 +25,8 @@ export function Experience() {
                 "Analyzed 150,000+ crime records using Python to classify incidents as violent or non-violent.",
                 "Identified crime trends and patterns through data aggregation and visualization techniques.",
                 "Collaborated with a graduate-level research team to produce data-driven reports and insights."
-            ]
+            ],
+            link: { url: "https://www.kaggle.com/code/shreyakb/fort-wayne-crimes", label: "View Analysis on Kaggle" }
         },
         {
             title: "Systems Software Assistant",

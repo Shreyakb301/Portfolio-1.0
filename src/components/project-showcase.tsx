@@ -25,6 +25,14 @@ export function ProjectShowcase() {
             tags: ["React", "Vite", "Node.js", "MongoDB"]
         },
         {
+            year: "2023",
+            title: "Fort Wayne Crimes",
+            description: "Conducted a comprehensive analysis of crime data in Fort Wayne using Python and Kaggle. Identified key patterns in incident types, geographic hotspots, and temporal trends to provide data-driven insights into municipal safety.",
+            image: "/crime-hp.jpeg",
+            link: "https://www.kaggle.com/code/shreyakb/fort-wayne-crimes",
+            tags: ["Python", "Data Analysis", "Kaggle", "Visualization"]
+        },
+        {
             year: "2025",
             title: "Do We Really Know How to Use Graphs Effectively",
             description: "Investigated effective visualization of categorical data, analyzing how users interpret different chart types. Designed user studies to evaluate clarity and formulated guidelines to improve data comprehension.",
