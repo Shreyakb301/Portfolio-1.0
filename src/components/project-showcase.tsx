@@ -63,19 +63,26 @@ export function ProjectShowcase() {
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                                 className="w-full lg:w-[60%] group relative drop-shadow-sm"
                             >
-                                <div className={`aspect-[16/10] overflow-hidden relative w-full bg-secondary/40 border border-border/60 rounded-[2rem] flex items-center justify-center ${project.image === '/research-poster.png' ? 'px-6 py-12' : 'p-6 sm:p-10 lg:p-14'}`}>
-                                    <div className="relative w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-out">
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-contain drop-shadow-md"
-                                            priority={index === 0}
-                                            sizes="(max-width: 768px) 100vw, 60vw"
-                                        />
+                                <Link
+                                    href={project.link}
+                                    target={project.link !== "#" ? "_blank" : undefined}
+                                    rel={project.link !== "#" ? "noopener noreferrer" : undefined}
+                                    className="block relative w-full h-full"
+                                >
+                                    <div className={`aspect-[16/10] overflow-hidden relative w-full bg-secondary/40 border border-border/60 rounded-[2rem] flex items-center justify-center ${project.image === '/research-poster.png' ? 'px-6 py-12' : 'p-6 sm:p-10 lg:p-14'}`}>
+                                        <div className="relative w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-out">
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                className="object-contain drop-shadow-md"
+                                                priority={index === 0}
+                                                sizes="(max-width: 768px) 100vw, 60vw"
+                                            />
+                                        </div>
+                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-foreground/5 transition-colors duration-500 pointer-events-none rounded-[2rem]" />
                                     </div>
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-foreground/5 transition-colors duration-500 pointer-events-none rounded-[2rem]" />
-                                </div>
+                                </Link>
                             </motion.div>
 
                             {/* Text Side */}
