@@ -1,39 +1,64 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Mail } from "lucide-react"
+import { Mail, Github, Linkedin } from "lucide-react"
 
 export function SiteHeader() {
     return (
-        <header className="fixed top-0 z-50 w-full bg-background/60 backdrop-blur-md">
+        <header className="fixed top-0 z-50 w-full bg-background/60 backdrop-blur-md border-b border-foreground/5">
             <div className="container mx-auto flex h-16 items-center justify-between px-6 md:px-12">
-                <div className="flex">
-                    <Link href="/" className="flex items-center">
-                        <span className="font-serif italic text-2xl md:text-3xl text-foreground">
-                            Shreya Komarabattini
-                        </span>
-                    </Link>
-                </div>
+                {/* Logo — vertically centered, same baseline as nav */}
+                <Link href="/" className="flex items-center h-full">
+                    <span className="font-serif italic text-2xl text-foreground leading-none">
+                        Shreya Komarabattini
+                    </span>
+                </Link>
 
-                <div className="flex items-center space-x-8">
-                    <nav className="hidden md:flex items-center space-x-8 text-lg font-medium">
-                        <Link href="/#work" className="group relative transition-colors text-foreground">
+                <div className="flex items-center gap-6">
+                    {/* Nav Links */}
+                    <nav className="hidden md:flex items-center gap-7 text-base font-medium">
+                        <Link
+                            href="/#work"
+                            className="relative text-foreground/70 hover:text-foreground transition-colors duration-200 group"
+                        >
                             Projects
-                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
                         </Link>
-                        <Link href="/about" className="group relative transition-colors text-foreground">
+                        <Link
+                            href="/about"
+                            className="relative text-foreground/70 hover:text-foreground transition-colors duration-200 group"
+                        >
                             About
-                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
                         </Link>
-                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group relative transition-colors text-foreground">
+                        <a
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative text-foreground/70 hover:text-foreground transition-colors duration-200 group"
+                        >
                             Resume
-                            <span className="absolute -bottom-1.5 left-1/2 w-1 h-1 bg-foreground rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1/2"></span>
+                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground group-hover:w-full transition-all duration-300" />
                         </a>
                     </nav>
-                    <div className="flex items-center">
-                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                            <Link href="mailto:shreyakbinbox@gmail.com" target="_blank" rel="noopener noreferrer">
-                                <span className="sr-only">Contact</span>
-                                <Mail className="h-4 w-4" />
+
+                    {/* Social Icon Buttons — larger hit area */}
+                    <div className="flex items-center gap-1">
+                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/5 transition-colors duration-200">
+                            <Link href="https://github.com/Shreyakb301" target="_blank" rel="noopener noreferrer">
+                                <span className="sr-only">GitHub</span>
+                                <Github className="h-[18px] w-[18px]" />
+                            </Link>
+                        </Button>
+                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/5 transition-colors duration-200">
+                            <Link href="https://www.linkedin.com/in/shreya-komarabattini" target="_blank" rel="noopener noreferrer">
+                                <span className="sr-only">LinkedIn</span>
+                                <Linkedin className="h-[18px] w-[18px]" />
+                            </Link>
+                        </Button>
+                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 rounded-full text-foreground/60 hover:text-foreground hover:bg-foreground/5 transition-colors duration-200">
+                            <Link href="mailto:shreyakbinbox@gmail.com">
+                                <span className="sr-only">Email</span>
+                                <Mail className="h-[18px] w-[18px]" />
                             </Link>
                         </Button>
                     </div>
