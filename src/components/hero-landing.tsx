@@ -71,7 +71,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                         className="max-w-xl leading-relaxed text-muted-foreground text-sm sm:text-lg mt-2 md:mt-4 font-sans px-1"
                     >
-                        Full-stack developer and data nerd.<br/>
+                        Interactive developer + data storyteller<br/>
                         I build web tools and dig into datasets<br/>
                         to find things worth knowing.
                     </motion.p>

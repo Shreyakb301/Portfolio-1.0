@@ -52,6 +52,20 @@ export default function AboutPage() {
                         </p>
                         <Experience />
                         <Skills />
+                        <section className="py-6 border-t border-primary/10">
+                            <h2 className="font-serif text-[10px] md:text-xs tracking-widest text-primary/60 uppercase mb-6">Additional Reading</h2>
+                            <p className="text-sm md:text-lg text-foreground/70 leading-relaxed max-w-[68ch]">
+                                Dive into my technical notes, research reflections, and deep-dive articles →{" "}
+                                <Link 
+                                    href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-primary hover:underline decoration-primary/40 underline-offset-4 transition-colors duration-200 cursor-none"
+                                >
+                                    View Collection
+                                </Link>
+                            </p>
+                        </section>
                         <Education />
                     </div>
                 </div>

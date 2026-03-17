@@ -37,22 +37,41 @@ export default function Home() {
           </Button>
 
           {/* Social Links below Get in Touch */}
-          <div className="flex items-center gap-6 md:gap-10 mt-10 md:mt-12">
+          <div className="flex flex-col items-center gap-8 mt-12">
+            <div className="flex items-center gap-6 md:gap-10">
+              <a 
+                href="https://github.com/Shreyakb301" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+              >
+                GitHub
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/shreya-komarabattini" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="https://calendly.com/shreyakbinbox/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+              >
+                Schedule
+              </a>
+            </div>
+
             <a 
-              href="https://github.com/Shreyakb301" 
+              href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors cursor-none"
+              className="font-serif text-[8px] md:text-[10px] text-primary/60 hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none max-w-xs md:max-w-none leading-relaxed"
             >
-              GitHub
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/shreya-komarabattini" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors cursor-none"
-            >
-              LinkedIn
+              read my technical ramblings & research notes → <span className="border-b border-primary/40 pb-0.5">Notion Collection</span>
             </a>
           </div>
         </section>

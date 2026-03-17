@@ -8,23 +8,23 @@ export function SiteHeader() {
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-12">
                 {/* Logo */}
                 <Link href="/" className="flex items-center h-full cursor-none">
-                    <span className="font-serif text-[10px] text-primary tracking-widest uppercase leading-none">
+                    <span className="font-serif text-xs md:text-sm text-primary tracking-[0.2em] uppercase leading-none">
                         SKB<span className="animate-blink">_</span>
                     </span>
                 </Link>
 
-                <div className="flex items-center gap-2 md:gap-6">
+                <div className="flex items-center gap-4 md:gap-8">
                     {/* Nav Links */}
-                    <nav className="flex items-center gap-3 md:gap-10">
+                    <nav className="flex items-center gap-4 md:gap-12">
                         <Link
                             href="/about"
-                            className="font-serif text-[7px] md:text-[8px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
                         >
                             About
                         </Link>
                         <Link
                             href="/#work"
-                            className="font-serif text-[7px] md:text-[8px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
                         >
                             Work
                         </Link>
@@ -32,7 +32,7 @@ export function SiteHeader() {
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-serif text-[7px] md:text-[8px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
                         >
                             Resume
                         </a>
