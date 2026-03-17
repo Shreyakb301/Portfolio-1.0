@@ -46,8 +46,8 @@ export function ProjectShowcase() {
     ]
 
     return (
-        <section id="work" className="container mx-auto py-24 md:py-32 px-6 md:px-12 bg-background relative border-t border-primary/20">
-            <HeartSprite className="animate-heart-bounce opacity-30" style={{top: '3.2rem', right: '2rem'}} />
+        <section id="work" className="container mx-auto py-16 md:py-32 px-4 md:px-12 bg-background relative border-t border-primary/20">
+            <HeartSprite className="animate-heart-bounce opacity-30 hidden sm:block" style={{top: '3.2rem', right: '2rem'}} />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function ProjectShowcase() {
                 </span>
             </motion.div>
 
-            <div className="flex flex-col border border-primary/20">
+            <div className="flex flex-col border-x border-t lg:border border-primary/20">
                 {projects.map((project, index) => {
                     const isEven = index % 2 === 0
                     const hasVideo = 'video' in project && project.video
@@ -71,7 +71,7 @@ export function ProjectShowcase() {
                             
                             {/* Sprites specific to rows */}
                             {index === 0 && (
-                                <div className="absolute -top-4 right-8 z-20 pointer-events-none">
+                                <div className="absolute -top-4 right-8 z-20 pointer-events-none hidden sm:block">
                                     <CoinSprite className="animate-coin-spin opacity-40" />
                                 </div>
                             )}
@@ -82,7 +82,7 @@ export function ProjectShowcase() {
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className={`w-full lg:w-[50%] relative min-h-[300px] flex items-center justify-center bg-secondary/20 p-8 md:p-12 ${isEven ? 'border-r border-primary/20' : 'border-l border-primary/20'}`}
+                                className={`w-full lg:w-[50%] relative min-h-[240px] md:min-h-[300px] flex items-center justify-center bg-secondary/10 p-4 md:p-12 ${isEven ? 'lg:border-r border-primary/20' : 'lg:border-l border-primary/20'} border-b lg:border-b-0`}
                             >
                                 <Link
                                     href={project.link}
@@ -122,10 +122,10 @@ export function ProjectShowcase() {
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                                className="w-full lg:w-[50%] p-8 md:p-12 lg:p-16 flex flex-col justify-center relative"
+                                className="w-full lg:w-[50%] p-6 md:p-12 lg:p-16 flex flex-col justify-center relative"
                             >
                                 {index === 1 && (
-                                    <WatcherSprite className="animate-watcher-bob opacity-35" style={{top: '-18px', left: '50%'}} />
+                                    <WatcherSprite className="animate-watcher-bob opacity-35 hidden sm:block" style={{top: '-18px', left: '50%'}} />
                                 )}
 
                                 <div className="flex flex-col gap-2 mb-6">

@@ -43,14 +43,14 @@ export function HeroLanding() {
             <StarSprite className="animate-star-twinkle opacity-25" style={{top: '40%', right: '100px'}} />
             <CrawlerSprite className="animate-crawler-move animate-crawler-step opacity-30" style={{bottom: '12px'}} />
 
-            <div className="container relative z-10 mx-auto px-6 md:px-12 pt-20">
-                <div className="flex flex-col items-start gap-6 max-w-4xl">
+            <div className="container relative z-10 mx-auto px-4 md:px-12 pt-20">
+                <div className="flex flex-col items-start gap-4 md:gap-6 max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <p className="font-serif text-xs md:text-sm tracking-[0.2em] font-semibold text-foreground/80 uppercase">
+                        <p className="font-serif text-[8px] md:text-sm tracking-[0.2em] font-semibold text-foreground/80 uppercase">
                             &gt; CS Student @ Purdue · Class of 2026
                         </p>
                     </motion.div>
@@ -59,17 +59,17 @@ export function HeroLanding() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.6] tracking-tight text-foreground"
+                        className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.6] tracking-tight text-foreground"
                     >
                         Hi, I'm <br />
-                        <span className="text-primary ml-4 md:ml-12 inline-block">Shreya <br className="sm:hidden" /> Komarabattini.</span>
+                        <span className="text-primary ml-2 md:ml-12 inline-block">Shreya <br className="sm:hidden" /> Komarabattini.</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="max-w-xl leading-relaxed text-muted-foreground sm:text-lg mt-4 font-sans"
+                        className="max-w-xl leading-relaxed text-muted-foreground text-sm sm:text-lg mt-2 md:mt-4 font-sans px-1"
                     >
                         Full-stack developer and data nerd.<br/>
                         I build web tools and dig into datasets<br/>
@@ -80,14 +80,14 @@ export function HeroLanding() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
-                        className="flex flex-wrap items-center gap-4 mt-6"
+                        className="flex flex-wrap items-center gap-3 md:gap-4 mt-6"
                     >
-                        <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-12 px-8 text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
+                        <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-11 md:h-12 px-6 md:px-8 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
                             <Link href="#work">
                                 See my work <ArrowRight className="ml-2 h-4 w-4 hidden" />
                             </Link>
                         </Button>
-                        <Button asChild size="lg" variant="ghost" className="rounded-none bg-transparent text-muted-foreground border-2 border-muted-foreground hover:border-primary hover:text-primary h-12 px-8 text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
+                        <Button asChild size="lg" variant="ghost" className="rounded-none bg-transparent text-muted-foreground border-2 border-muted-foreground hover:border-primary hover:text-primary h-11 md:h-12 px-6 md:px-8 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
                             <Link href="mailto:shreyakbinbox@gmail.com">
                                 Get in touch
                             </Link>

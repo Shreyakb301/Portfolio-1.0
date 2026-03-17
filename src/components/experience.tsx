@@ -110,9 +110,9 @@ export function Experience() {
                                 </p>
 
                                 {/* Description */}
-                                <ul className="mt-4 space-y-2.5 pl-4 list-none border-l-2 border-primary/20">
+                                <ul className="mt-4 space-y-2.5 pl-3 md:pl-4 list-none border-l-2 border-primary/20">
                                     {exp.description.map((desc, i) => (
-                                        <li key={i} className="text-sm md:text-base text-foreground/70 leading-relaxed max-w-[68ch] relative before:absolute before:-left-4 before:top-2.5 before:w-2 before:h-[2px] before:bg-primary/30">
+                                        <li key={i} className="text-xs md:text-base text-foreground/70 leading-relaxed max-w-[68ch] relative before:absolute before:-left-3 md:before:-left-4 before:top-2 before:md:top-2.5 before:w-1.5 md:before:w-2 before:h-[2px] before:bg-primary/30">
                                             {desc}
                                         </li>
                                     ))}
