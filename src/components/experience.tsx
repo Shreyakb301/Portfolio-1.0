@@ -76,7 +76,7 @@ export function Experience() {
 
     return (
         <section>
-            <h2 className="text-3xl font-bold tracking-tight mb-8 text-foreground">Experience</h2>
+            <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-12 text-foreground uppercase border-b border-primary/20 pb-4 inline-block">Experience</h2>
 
             <div className="relative">
                 {/* Vertical timeline line */}
@@ -89,13 +89,12 @@ export function Experience() {
                             <div className="absolute left-[-4.5px] top-[10px] w-[9px] h-[9px] rounded-full bg-foreground/30 ring-2 ring-background" />
 
                             <div className="flex flex-col gap-1">
-                                {/* Title + Date row */}
-                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5">
-                                    <h3 className="text-xl font-semibold text-foreground leading-snug">{exp.title}</h3>
+                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 mb-2">
+                                    <h3 className="font-serif text-[10px] md:text-xs text-foreground leading-snug tracking-widest uppercase mt-0.5">{exp.title}</h3>
                                     {exp.date && (
                                         <Badge
                                             variant="secondary"
-                                            className="self-start shrink-0 text-xs font-medium px-2.5 py-1 rounded-md bg-foreground/5 text-foreground/60 border-none shadow-none"
+                                            className="self-start shrink-0 font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase"
                                         >
                                             {exp.date}
                                         </Badge>
@@ -103,17 +102,17 @@ export function Experience() {
                                 </div>
 
                                 {/* Company + Advisor */}
-                                <p className="text-base font-medium text-[#637A70]">
+                                <p className="font-serif text-[10px] md:text-[11px] text-primary tracking-widest uppercase mb-1">
                                     {exp.company}
                                     {exp.advisor && (
-                                        <span className="block text-sm font-normal text-foreground/50 mt-0.5">{exp.advisor}</span>
+                                        <span className="block text-[8px] text-muted-foreground mt-1.5">{exp.advisor}</span>
                                     )}
                                 </p>
 
                                 {/* Description */}
-                                <ul className="mt-2 space-y-1.5 pl-4 list-disc marker:text-foreground/25">
+                                <ul className="mt-4 space-y-2.5 pl-4 list-none border-l-2 border-primary/20">
                                     {exp.description.map((desc, i) => (
-                                        <li key={i} className="text-sm md:text-base text-foreground/60 leading-relaxed max-w-[68ch]">
+                                        <li key={i} className="text-sm md:text-base text-foreground/70 leading-relaxed max-w-[68ch] relative before:absolute before:-left-4 before:top-2.5 before:w-2 before:h-[2px] before:bg-primary/30">
                                             {desc}
                                         </li>
                                     ))}
@@ -125,9 +124,9 @@ export function Experience() {
                                         href={exp.link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-foreground/50 hover:text-foreground transition-colors duration-200 w-fit group"
+                                        className="mt-6 inline-flex items-center gap-2 font-serif text-[8px] tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group cursor-none"
                                     >
-                                        <ExternalLink className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                                        <ExternalLink className="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                                         {exp.link.label}
                                     </a>
                                 )}

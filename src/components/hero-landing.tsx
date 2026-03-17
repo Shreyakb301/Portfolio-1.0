@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { CloudSprite, CloudSprite2, StarSprite, CrawlerSprite } from "./pixel-sprites"
 
 export function HeroLanding() {
     return (
@@ -36,6 +37,12 @@ export function HeroLanding() {
                 />
             </div>
 
+            {/* Sprites */}
+            <CloudSprite className="animate-cloud-drift opacity-20" style={{top: '14px', left: 0}} />
+            <CloudSprite2 className="animate-cloud2-drift opacity-15" style={{top: '50px', left: 0}} />
+            <StarSprite className="animate-star-twinkle opacity-25" style={{top: '40%', right: '100px'}} />
+            <CrawlerSprite className="animate-crawler-move animate-crawler-step opacity-30" style={{bottom: '12px'}} />
+
             <div className="container relative z-10 mx-auto px-6 md:px-12 pt-20">
                 <div className="flex flex-col items-start gap-6 max-w-4xl">
                     <motion.div
@@ -43,8 +50,8 @@ export function HeroLanding() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <p className="font-sans text-sm md:text-base tracking-[0.2em] font-semibold text-foreground/60 uppercase">
-                            Developer &amp; Student
+                        <p className="font-serif text-xs md:text-sm tracking-[0.2em] font-semibold text-foreground/80 uppercase">
+                            &gt; CS Student @ Purdue · Class of 2026
                         </p>
                     </motion.div>
 
@@ -52,20 +59,21 @@ export function HeroLanding() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="font-serif text-[4.5rem] sm:text-8xl md:text-[8rem] lg:text-[9.5rem] leading-[0.85] tracking-tight text-foreground"
+                        className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.6] tracking-tight text-foreground"
                     >
-                        Building <br />
-                        <span className="italic text-foreground/60 ml-4 md:ml-12 inline-block">Digital</span> <br />
-                        Masterpieces
+                        Hi, I'm <br />
+                        <span className="text-primary ml-4 md:ml-12 inline-block">Shreya <br className="sm:hidden" /> Komarabattini.</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="max-w-xl leading-relaxed text-muted-foreground sm:text-xl md:text-2xl mt-4 font-sans"
+                        className="max-w-xl leading-relaxed text-muted-foreground sm:text-lg mt-4 font-sans"
                     >
-                        Crafting modern, high-performance web experiences with care and intention.
+                        Full-stack developer and data nerd.<br/>
+                        I build web tools and dig into datasets<br/>
+                        to find things worth knowing.
                     </motion.p>
 
                     <motion.div
@@ -74,9 +82,14 @@ export function HeroLanding() {
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
                         className="flex flex-wrap items-center gap-4 mt-6"
                     >
-                        <Button asChild size="lg" className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 text-base font-medium shadow-none">
-                            <Link href="/about">
-                                About Me <ArrowRight className="ml-2 h-5 w-5" />
+                        <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-12 px-8 text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
+                            <Link href="#work">
+                                See my work <ArrowRight className="ml-2 h-4 w-4 hidden" />
+                            </Link>
+                        </Button>
+                        <Button asChild size="lg" variant="ghost" className="rounded-none bg-transparent text-muted-foreground border-2 border-muted-foreground hover:border-primary hover:text-primary h-12 px-8 text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
+                            <Link href="mailto:shreyakbinbox@gmail.com">
+                                Get in touch
                             </Link>
                         </Button>
                     </motion.div>

@@ -2,15 +2,15 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function Education() {
     return (
-        <section className="py-8">
-            <h2 className="text-4xl font-bold tracking-tight mb-6">Education</h2>
-            <Card className="shadow-sm">
+        <section className="py-12">
+            <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-12 text-foreground uppercase border-b border-primary/20 pb-4 inline-block">Education</h2>
+            <Card className="rounded-none border-2 border-primary/20 bg-background shadow-none">
                 <CardHeader>
-                    <div className="flex justify-between items-start">
-                        <CardTitle className="text-2xl font-bold">Bachelor of Science in Computer Science</CardTitle>
-                        <span className="text-lg text-muted-foreground">2026</span>
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+                        <CardTitle className="font-serif text-[10px] md:text-xs tracking-widest uppercase text-primary leading-relaxed">Bachelor of Science in <br className="hidden md:block"/>Computer Science</CardTitle>
+                        <span className="font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 bg-primary/10 text-primary uppercase">2026</span>
                     </div>
-                    <p className="text-xl text-muted-foreground">Purdue University</p>
+                    <p className="font-serif text-[10px] tracking-widest text-muted-foreground uppercase pt-4">Purdue University</p>
                 </CardHeader>
             </Card>
         </section>

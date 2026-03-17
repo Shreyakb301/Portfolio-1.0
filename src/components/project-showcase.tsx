@@ -5,45 +5,50 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { HeartSprite, CoinSprite, WatcherSprite } from "./pixel-sprites"
 
 export function ProjectShowcase() {
     const projects = [
         {
             year: "2026",
             title: "Protoplay",
-            description: "Built an interactive web platform that teaches engineering concepts through gamified simulations, architecture challenges, and algorithm puzzles, emphasizing learning by building rather than memorization.",
+            description: "Interactive platform that teaches engineering concepts through gamified simulations, architecture challenges, and algorithm puzzles — learning by building, not memorising.",
             image: "/protoplay-hp.png",
+            video: "/prototype-demo.mp4",
             link: "https://protoplay.vercel.app/",
-            tags: ["Next.js", "TypeScript", "Tailwind CSS"]
+            tags: ["Next.js", "TypeScript", "Tailwind"]
         },
         {
             year: "2025",
             title: "HealthyCal",
-            description: "A web platform designed to help users track calories and monitor their nutrition intake. It helps people stay aware of how different foods contribute to daily energy and nutrient goals, encouraging balanced and mindful eating.",
+            description: "Full-stack nutrition tracker — React frontend, Node/Express API, MongoDB storage. Helps users stay aware of how different foods contribute to daily energy and nutrient goals.",
             image: "/healthycal-hp.png",
+            video: "/healthycal-demo.mp4",
             link: "https://healthy-cal.vercel.app",
-            tags: ["React", "Vite", "Node.js", "MongoDB"]
+            tags: ["React", "Node.js", "MongoDB", "Vite"]
         },
         {
             year: "2023",
-            title: "Fort Wayne Crimes",
-            description: "Conducted a comprehensive analysis of crime data in Fort Wayne using Python and Kaggle. Identified key patterns in incident types, geographic hotspots, and temporal trends to provide data-driven insights into municipal safety.",
+            title: "FW Crime Analysis",
+            description: "Classified 150,000+ crime records using Python, identified violent vs. non-violent patterns, mapped geographic hotspots, and surfaced temporal trends for data-driven municipal insights.",
             image: "/crime-hp.jpeg",
             link: "https://www.kaggle.com/code/shreyakb/fort-wayne-crimes",
-            tags: ["Python", "Data Analysis", "Kaggle", "Visualization"]
+            tags: ["Python", "Pandas", "Kaggle", "Data Viz"]
         },
         {
             year: "2025",
-            title: "Do We Really Know How to Use Graphs Effectively",
-            description: "Investigated effective visualization of categorical data, analyzing how users interpret different chart types. Designed user studies to evaluate clarity and formulated guidelines to improve data comprehension.",
+            title: "Graph Research",
+            description: "Investigated how users interpret bar, line, and stacked bar charts. Designed user studies to evaluate visualization clarity, and formulated evidence-based guidelines for better data comprehension. Presented at Purdue's Annual Research Symposium.",
             image: "/research-poster.png",
             link: "/PosterSample.pdf",
-            tags: ["Data Visualization", "User Study", "Research"]
+            tags: ["Research", "User Study", "Data Viz"]
         }
     ]
 
     return (
-        <section id="work" className="container mx-auto py-24 md:py-32 px-6 md:px-12 bg-background">
+        <section id="work" className="container mx-auto py-24 md:py-32 px-6 md:px-12 bg-background relative border-t border-primary/20">
+            <HeartSprite className="animate-heart-bounce opacity-30" style={{top: '3.2rem', right: '2rem'}} />
+
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -51,86 +56,111 @@ export function ProjectShowcase() {
                 transition={{ duration: 0.8 }}
                 className="mb-20 md:mb-32 flex flex-col items-start"
             >
-                <span className="text-sm font-semibold tracking-widest uppercase text-foreground/60 mb-4">Selected Work</span>
-                <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight text-foreground">
-                    Featured <span className="italic text-foreground/70">Projects</span>
-                </h2>
+                <span className="font-serif text-xs font-semibold tracking-widest text-primary mb-4 flex items-center gap-3">
+                    <span className="text-muted-foreground">//</span> SELECTED WORK
+                </span>
             </motion.div>
 
-            <div className="flex flex-col gap-32 md:gap-48">
+            <div className="flex flex-col border border-primary/20">
                 {projects.map((project, index) => {
                     const isEven = index % 2 === 0
+                    const hasVideo = 'video' in project && project.video
 
                     return (
-                        <div key={project.title} className={`flex flex-col gap-12 lg:gap-24 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center`}>
-                            {/* Image Side */}
+                        <div key={project.title} className={`group relative flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch border-b border-primary/20 last:border-b-0 bg-background hover:bg-secondary/30 transition-colors duration-200`}>
+                            
+                            {/* Sprites specific to rows */}
+                            {index === 0 && (
+                                <div className="absolute -top-4 right-8 z-20 pointer-events-none">
+                                    <CoinSprite className="animate-coin-spin opacity-40" />
+                                </div>
+                            )}
+
+                            {/* Image/Video Side */}
                             <motion.div
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="w-full lg:w-[60%] group relative drop-shadow-sm"
+                                className={`w-full lg:w-[50%] relative min-h-[300px] flex items-center justify-center bg-secondary/20 p-8 md:p-12 ${isEven ? 'border-r border-primary/20' : 'border-l border-primary/20'}`}
                             >
                                 <Link
                                     href={project.link}
                                     target={project.link !== "#" ? "_blank" : undefined}
                                     rel={project.link !== "#" ? "noopener noreferrer" : undefined}
-                                    className="block relative w-full h-full"
+                                    className="block relative w-full h-full cursor-none"
                                 >
-                                    <div className={`aspect-[16/10] overflow-hidden relative w-full bg-secondary/40 border border-border/60 rounded-[2rem] flex items-center justify-center ${project.image === '/research-poster.png' ? 'px-6 py-12' : 'p-6 sm:p-10 lg:p-14'}`}>
-                                        <div className="relative w-full h-full group-hover:scale-[1.03] transition-transform duration-700 ease-out">
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                className="object-contain drop-shadow-md"
-                                                priority={index === 0}
-                                                sizes="(max-width: 768px) 100vw, 60vw"
-                                            />
+                                    <div className="relative w-full h-full flex items-center justify-center">
+                                        <div className="relative w-full aspect-[16/10] group-hover:scale-[1.02] transition-transform duration-300 ease-out overflow-hidden">
+                                            {hasVideo ? (
+                                                <video
+                                                    src={project.video}
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    playsInline
+                                                    className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                                />
+                                            ) : (
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    fill
+                                                    className="object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                                                    priority={index === 0}
+                                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                                />
+                                            )}
                                         </div>
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-foreground/5 transition-colors duration-500 pointer-events-none rounded-[2rem]" />
                                     </div>
                                 </Link>
                             </motion.div>
 
                             {/* Text Side */}
                             <motion.div
-                                initial={{ opacity: 0, x: isEven ? 40 : -40 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
                                 viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                                className="w-full lg:w-[40%] flex flex-col"
+                                transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                                className="w-full lg:w-[50%] p-8 md:p-12 lg:p-16 flex flex-col justify-center relative"
                             >
-                                <div className="flex items-center gap-4 mb-6">
-                                    <span className="text-foreground/50 text-sm font-medium tracking-wide">{project.year}</span>
-                                    <div className="h-px w-12 bg-foreground/20" />
+                                {index === 1 && (
+                                    <WatcherSprite className="animate-watcher-bob opacity-35" style={{top: '-18px', left: '50%'}} />
+                                )}
+
+                                <div className="flex flex-col gap-2 mb-6">
+                                    <span className="font-serif text-xs text-primary/40 tracking-[0.2em]">{String(index + 1).padStart(2, '0')}</span>
+                                    <span className="font-serif text-xs text-primary/70">{project.year}</span>
                                 </div>
 
-                                <Link
-                                    href={project.link}
-                                    target={project.link !== "#" ? "_blank" : undefined}
-                                    rel={project.link !== "#" ? "noopener noreferrer" : undefined}
-                                    className="group/link inline-flex items-center gap-3 w-fit mb-6"
-                                >
-                                    <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground">
-                                        {project.title}
-                                    </h3>
-                                    {project.link !== "#" && (
-                                        <ArrowUpRight className="h-8 w-8 text-foreground/40 group-hover/link:text-foreground group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-all duration-300" />
-                                    )}
-                                </Link>
+                                <h3 className="font-serif text-lg md:text-xl lg:text-2xl text-foreground mb-6 leading-[1.8]">
+                                    {project.title}
+                                </h3>
 
-                                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 font-sans">
+                                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8 max-w-sm">
                                     {project.description}
                                 </p>
 
-                                <div className="flex flex-wrap gap-3">
+                                <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tags.map((tag) => (
-                                        <Badge key={tag} variant="secondary" className="bg-foreground/5 hover:bg-foreground/10 text-foreground font-medium px-4 py-1.5 rounded-full border-none shadow-none text-sm transition-colors">
+                                        <span key={tag} className="font-serif text-[10px] text-primary border border-primary/40 px-3 py-1.5 tracking-wider uppercase">
                                             {tag}
-                                        </Badge>
+                                        </span>
                                     ))}
                                 </div>
+
+                                {project.link !== "#" && (
+                                    <div className="mt-auto pt-4">
+                                        <Link
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-block font-serif text-[10px] text-background bg-primary border-2 border-primary px-5 py-3 tracking-wider uppercase hover:bg-transparent hover:text-primary transition-colors cursor-none"
+                                        >
+                                            View Project
+                                        </Link>
+                                    </div>
+                                )}
                             </motion.div>
                         </div>
                     )

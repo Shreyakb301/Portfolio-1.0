@@ -13,31 +13,31 @@ export default function AboutPage() {
             <main className="flex-1">
                 <div className="container mx-auto max-w-4xl pt-24 pb-6 lg:pt-32 lg:pb-10 px-4 md:px-6">
                     {/* Page Header */}
-                    <div className="space-y-2 mb-2">
-                        <h1 className="text-5xl md:text-7xl tracking-tight font-bold text-foreground leading-none">
-                            About
+                    <div className="space-y-4 mb-4 relative">
+                        <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tight text-foreground leading-relaxed">
+                            About<span className="animate-blink text-primary">_</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-snug max-w-xl">
+                        <p className="text-lg md:text-xl text-muted-foreground font-sans leading-snug max-w-xl">
                             Computer Science Student, Researcher, and Developer.
                         </p>
                         {/* Social Links */}
-                        <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2">
+                        <div className="flex flex-wrap gap-x-8 gap-y-2 pt-4">
                             <Link
                                 href="https://github.com/Shreyakb301"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide text-foreground/50 hover:text-foreground transition-colors duration-200"
+                                className="inline-flex items-center gap-2 font-serif text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200 cursor-none"
                             >
-                                <Github className="h-3.5 w-3.5" />
+                                <Github className="h-4 w-4" />
                                 GitHub
                             </Link>
                             <Link
                                 href="https://www.linkedin.com/in/shreya-komarabattini"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide text-foreground/50 hover:text-foreground transition-colors duration-200"
+                                className="inline-flex items-center gap-2 font-serif text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200 cursor-none"
                             >
-                                <Linkedin className="h-3.5 w-3.5" />
+                                <Linkedin className="h-4 w-4" />
                                 LinkedIn
                             </Link>
                         </div>

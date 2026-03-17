@@ -11,18 +11,18 @@ export function Skills() {
     }
 
     return (
-        <section className="py-8">
-            <h2 className="text-4xl font-bold tracking-tight mb-6">Skills</h2>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <section className="py-12">
+            <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-12 text-foreground uppercase border-b border-primary/20 pb-4 inline-block">Skills</h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {Object.entries(skills).map(([category, items]) => (
-                    <Card key={category} className="shadow-sm">
-                        <CardHeader className="pb-2">
-                            <CardTitle className="text-2xl">{category}</CardTitle>
+                    <Card key={category} className="rounded-none border-2 border-primary/20 bg-background shadow-none">
+                        <CardHeader className="pb-4">
+                            <CardTitle className="font-serif text-[10px] md:text-xs tracking-widest uppercase text-primary leading-relaxed">{category}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-2.5 mt-2">
                                 {items.map((item) => (
-                                    <Badge key={item} variant="secondary" className="text-base px-3 py-1">
+                                    <Badge key={item} variant="secondary" className="font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
                                         {item}
                                     </Badge>
                                 ))}
