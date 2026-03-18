@@ -32,7 +32,7 @@ export function ProjectShowcase() {
             title: "FW Crime Analysis",
             description: "Classified 150,000+ crime records using Python, identified violent vs. non-violent patterns, mapped geographic hotspots, and surfaced temporal trends for data-driven municipal insights.",
             image: "/crime-hp.jpeg",
-            link: "https://www.kaggle.com/code/shreyakb/fort-wayne-crimes",
+            link: "https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023",
             tags: ["Python", "Pandas", "Kaggle", "Data Viz"]
         },
         {

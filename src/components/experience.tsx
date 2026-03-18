@@ -32,7 +32,7 @@ export function Experience() {
                     "Identified crime trends and patterns through data aggregation and visualization techniques.",
                     "Collaborated with a graduate-level research team to produce data-driven reports and insights.",
                 ],
-                link: { url: "https://www.kaggle.com/code/shreyakb/fort-wayne-crimes", label: "View Analysis on Kaggle" },
+                link: { url: "https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023", label: "View Analysis on Kaggle" },
             },
             {
                 title: "Systems Software Assistant",
