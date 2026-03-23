@@ -44,7 +44,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
+
   --animate-blink: blink 1.2s step-end infinite;
   --animate-cloud-drift: cloud-drift 40s linear infinite;
   --animate-cloud2-drift: cloud2-drift 58s linear infinite;
@@ -56,18 +56,195 @@
   --animate-crawler-move: crawler-move 26s linear infinite;
   --animate-crawler-step: crawler-step .35s steps(1) infinite;
   --animate-watcher-bob: watcher-bob 2s ease-in-out infinite;
+  --animate-breathe: breathe 3s ease-in-out infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-nod: nod 2.5s ease-in-out infinite;
 
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-  @keyframes cloud-drift { 0%{transform:translateX(-160px)} 100%{transform:translateX(calc(100vw + 160px))} }
-  @keyframes cloud2-drift{ 0%{transform:translateX(calc(100vw + 160px))} 100%{transform:translateX(-160px)} }
-  @keyframes star-twinkle{ 0%,100%{opacity:.2;transform:scale(1)} 50%{opacity:.55;transform:scale(1.15)} }
-  @keyframes heart-bounce{ 0%,100%{transform:translateY(0)} 35%{transform:translateY(-7px)} 55%{transform:translateY(-3px)} 75%{transform:translateY(-7px)} }
-  @keyframes flower-nod  { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(-8deg)} 75%{transform:rotate(8deg)} }
-  @keyframes coin-spin   { 0%,100%{transform:translateX(-50%) scaleX(1)} 45%,55%{transform:translateX(-50%) scaleX(.08)} }
-  @keyframes ghost-peek  { 0%,100%{transform:translateY(0)} 20%,80%{transform:translateY(-24px)} 50%{transform:translateY(-24px) rotate(4deg)} }
-  @keyframes crawler-move{ 0%{left:-60px} 100%{left:calc(100% + 60px)} }
-  @keyframes crawler-step{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-  @keyframes watcher-bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-3px)} }
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1
+    }
+
+    50% {
+      opacity: 0
+    }
+  }
+
+  @keyframes cloud-drift {
+    0% {
+      transform: translateX(-160px)
+    }
+
+    100% {
+      transform: translateX(calc(100vw + 160px))
+    }
+  }
+
+  @keyframes cloud2-drift {
+    0% {
+      transform: translateX(calc(100vw + 160px))
+    }
+
+    100% {
+      transform: translateX(-160px)
+    }
+  }
+
+  @keyframes star-twinkle {
+
+    0%,
+    100% {
+      opacity: .2;
+      transform: scale(1)
+    }
+
+    50% {
+      opacity: .55;
+      transform: scale(1.15)
+    }
+  }
+
+  @keyframes heart-bounce {
+
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+
+    35% {
+      transform: translateY(-7px)
+    }
+
+    55% {
+      transform: translateY(-3px)
+    }
+
+    75% {
+      transform: translateY(-7px)
+    }
+  }
+
+  @keyframes flower-nod {
+
+    0%,
+    100% {
+      transform: rotate(0deg)
+    }
+
+    25% {
+      transform: rotate(-8deg)
+    }
+
+    75% {
+      transform: rotate(8deg)
+    }
+  }
+
+  @keyframes coin-spin {
+    0%,
+    100% {
+      transform: scaleX(1)
+    }
+
+    45%,
+    55% {
+      transform: scaleX(.08)
+    }
+  }
+
+
+  @keyframes ghost-peek {
+
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+
+    20%,
+    80% {
+      transform: translateY(-24px)
+    }
+
+    50% {
+      transform: translateY(-24px) rotate(4deg)
+    }
+  }
+
+  @keyframes crawler-move {
+    0% {
+      left: -60px
+    }
+
+    100% {
+      left: calc(100% + 60px)
+    }
+  }
+
+  @keyframes crawler-step {
+
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+
+    50% {
+      transform: translateY(-3px)
+    }
+  }
+
+  @keyframes watcher-bob {
+
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0)
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-3px)
+    }
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scaleY(1)
+    }
+
+    50% {
+      transform: scaleY(0.9)
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+
+    50% {
+      transform: translateY(-10px)
+    }
+  }
+
+  @keyframes nod {
+
+    0%,
+    100% {
+      transform: rotate(0deg)
+    }
+
+    25% {
+      transform: rotate(-5deg)
+    }
+
+    75% {
+      transform: rotate(5deg)
+    }
+  }
 }
 
 :root {
@@ -87,8 +264,8 @@
   --accent: #f5f0e8;
   --accent-foreground: #1a1a2e;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(45,74,30,0.25);
-  --input: rgba(45,74,30,0.25);
+  --border: rgba(45, 74, 30, 0.25);
+  --input: rgba(45, 74, 30, 0.25);
   --ring: #2d4a1e;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -101,7 +278,7 @@
   --sidebar-primary-foreground: #fcf9f5;
   --sidebar-accent: #f5f0e8;
   --sidebar-accent-foreground: #1a1a2e;
-  --sidebar-border: rgba(45,74,30,0.25);
+  --sidebar-border: rgba(45, 74, 30, 0.25);
   --sidebar-ring: #1a1a2e;
 }
 
@@ -121,8 +298,8 @@
   --accent: #f5f0e8;
   --accent-foreground: #1a1a2e;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(45,74,30,0.25);
-  --input: rgba(45,74,30,0.25);
+  --border: rgba(45, 74, 30, 0.25);
+  --input: rgba(45, 74, 30, 0.25);
   --ring: #2d4a1e;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -135,7 +312,7 @@
   --sidebar-primary-foreground: #fcf9f5;
   --sidebar-accent: #f5f0e8;
   --sidebar-accent-foreground: #1a1a2e;
-  --sidebar-border: rgba(45,74,30,0.25);
+  --sidebar-border: rgba(45, 74, 30, 0.25);
   --sidebar-ring: #1a1a2e;
 }
 
@@ -143,15 +320,24 @@
   html {
     scroll-behavior: smooth;
   }
+
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground transition-colors duration-300;
   }
 
+  /* Safari Backdrop Filter Fix */
+  header, [class*="backdrop-blur"] {
+    -webkit-backdrop-filter: blur(8px);
+  }
+
   @media (min-width: 640px) {
-    body.no-native-cursor, body.no-native-cursor * {
+
+    body.no-native-cursor,
+    body.no-native-cursor * {
       cursor: none !important;
     }
   }

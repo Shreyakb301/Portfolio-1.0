@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, DM_Sans, Press_Start_2P } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -36,7 +37,9 @@ export default function RootLayout({
         className={`${instrumentSerif.variable} ${dmSans.variable} ${pressStart2P.variable} font-sans antialiased selection:bg-primary/20`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
 }
+

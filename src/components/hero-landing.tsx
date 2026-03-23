@@ -4,11 +4,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
-import { CloudSprite, CloudSprite2, StarSprite, CrawlerSprite } from "./pixel-sprites"
+import { CloudSprite, CloudSprite2, StarSprite, CrawlerSprite, RobotSprite, DroneSprite } from "./pixel-sprites"
 
 export function HeroLanding() {
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        <section className="relative min-h-svh flex items-center overflow-hidden py-20 px-4 md:px-0">
             {/* Animated Background Blobs */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <motion.div
@@ -36,12 +36,14 @@ export function HeroLanding() {
                     className="absolute top-1/2 -left-20 w-96 h-96 bg-foreground/5 rounded-full blur-3xl mix-blend-multiply"
                 />
             </div>
-
+ 
             {/* Sprites */}
-            <CloudSprite className="animate-cloud-drift opacity-20" style={{top: '14px', left: 0}} />
-            <CloudSprite2 className="animate-cloud2-drift opacity-15" style={{top: '50px', left: 0}} />
-            <StarSprite className="animate-star-twinkle opacity-25" style={{top: '40%', right: '100px'}} />
-            <CrawlerSprite className="animate-crawler-move animate-crawler-step opacity-30" style={{bottom: '12px'}} />
+            <CloudSprite className="animate-cloud-drift opacity-20" style={{ top: '14px', left: 0 }} />
+            <CloudSprite2 className="animate-cloud2-drift opacity-15" style={{ top: '50px', left: 0 }} />
+            <StarSprite className="animate-star-twinkle opacity-25" style={{ top: '40%', right: '100px' }} />
+            <CrawlerSprite className="animate-crawler-move animate-crawler-step opacity-30" style={{ bottom: '12px' }} />
+
+
 
             <div className="container relative z-10 mx-auto px-4 md:px-12 pt-20">
                 <div className="flex flex-col items-start gap-4 md:gap-6 max-w-4xl">
@@ -62,17 +64,24 @@ export function HeroLanding() {
                         className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.6] tracking-tight text-foreground"
                     >
                         Hi, I'm <br />
-                        <span className="text-primary ml-2 md:ml-12 inline-block">Shreya <br className="sm:hidden" /> Komarabattini.</span>
+                        <span className="text-primary ml-2 md:ml-12 inline-block relative group">
+                            Shreya <br className="sm:hidden" /> Komarabattini.
+                            <RobotSprite className="absolute -top-4 right-0 block animate-breathe opacity-70" />
+                        </span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="max-w-xl leading-relaxed text-muted-foreground text-sm sm:text-lg mt-2 md:mt-4 font-sans px-1"
+                        className="max-w-xl leading-relaxed text-muted-foreground text-sm sm:text-lg mt-2 md:mt-4 font-sans px-1 relative"
                     >
-                        Interactive developer + data storyteller<br/>
-                        I build web tools and dig into datasets<br/>
+                        <span className="relative inline-block">
+                            Interactive developer + data storyteller
+                            <DroneSprite className="absolute -top-8 right-0 animate-float opacity-50 hidden md:block" />
+                        </span>
+                        <br />
+                        I build web tools and dig into datasets<br />
                         to find things worth knowing.
                     </motion.p>
 
