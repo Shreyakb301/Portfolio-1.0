@@ -26,7 +26,7 @@ export default function AboutPage() {
                                 href="https://github.com/Shreyakb301"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 font-serif text-[8px] md:text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200 cursor-none"
+                                className="inline-flex items-center gap-2 font-serif text-[8px] md:text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                             >
                                 <Github className="h-3.5 w-3.5" />
                                 GitHub
@@ -35,7 +35,7 @@ export default function AboutPage() {
                                 href="https://www.linkedin.com/in/shreya-komarabattini"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 font-serif text-[8px] md:text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200 cursor-none"
+                                className="inline-flex items-center gap-2 font-serif text-[8px] md:text-[10px] tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
                             >
                                 <Linkedin className="h-3.5 w-3.5" />
                                 LinkedIn
@@ -60,7 +60,7 @@ export default function AboutPage() {
                                     href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="text-primary hover:underline decoration-primary/40 underline-offset-4 transition-colors duration-200 cursor-none"
+                                    className="text-primary hover:underline decoration-primary/40 underline-offset-4 transition-colors duration-200"
                                 >
                                     View Collection
                                 </Link>

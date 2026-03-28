@@ -7,7 +7,7 @@ export function SiteHeader() {
         <header className="fixed top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-primary/20">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-12">
                 {/* Logo */}
-                <Link href="/" className="flex items-center h-full cursor-none">
+                <Link href="/" className="flex items-center h-full">
                     <span className="font-serif text-xs md:text-sm text-primary tracking-[0.2em] uppercase leading-none">
                         SKB<span className="animate-blink">_</span>
                     </span>
@@ -18,13 +18,13 @@ export function SiteHeader() {
                     <nav className="flex items-center gap-4 md:gap-12">
                         <Link
                             href="/about"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
                         >
                             About
                         </Link>
                         <Link
                             href="/#work"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
                         >
                             Work
                         </Link>
@@ -32,7 +32,7 @@ export function SiteHeader() {
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200 cursor-none"
+                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
                         >
                             Resume
                         </a>
@@ -40,19 +40,19 @@ export function SiteHeader() {
 
                     {/* Social Icon Buttons - Hidden on very narrow screens to make room for links */}
                     <div className="hidden xs:flex items-center gap-0 md:gap-1">
-                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 cursor-none rounded-none">
+                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 rounded-none">
                             <Link href="https://github.com/Shreyakb301" target="_blank" rel="noopener noreferrer">
                                 <span className="sr-only">GitHub</span>
                                 <Github className="h-4 w-4 md:h-[18px] md:w-[18px]" />
                             </Link>
                         </Button>
-                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 cursor-none rounded-none">
+                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 rounded-none">
                             <Link href="https://www.linkedin.com/in/shreya-komarabattini" target="_blank" rel="noopener noreferrer">
                                 <span className="sr-only">LinkedIn</span>
                                 <Linkedin className="h-4 w-4 md:h-[18px] md:w-[18px]" />
                             </Link>
                         </Button>
-                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 cursor-none rounded-none">
+                        <Button asChild variant="ghost" size="icon" className="h-9 w-9 md:h-10 md:w-10 text-muted-foreground hover:text-primary hover:bg-transparent transition-colors duration-200 rounded-none">
                             <Link href="mailto:shreyakbinbox@gmail.com">
                                 <span className="sr-only">Email</span>
                                 <Mail className="h-4 w-4 md:h-[18px] md:w-[18px]" />

@@ -334,14 +334,6 @@
     -webkit-backdrop-filter: blur(8px);
   }
 
-  @media (min-width: 640px) {
-
-    body.no-native-cursor,
-    body.no-native-cursor * {
-      cursor: none !important;
-    }
-  }
-
   body::before {
     content: "";
     position: fixed;
@@ -353,5 +345,18 @@
     opacity: 0.04;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     mix-blend-mode: overlay;
+  }
+}
+
+/* ── Custom Mouse Cursors ── */
+@media (min-width: 640px) {
+  *, body {
+    cursor: url('/cursor.png') 0 0, auto !important;
+  }
+
+  a, button, [role="button"], 
+  a *, button *, [role="button"] *, 
+  .cursor-pointer, .cursor-pointer * {
+    cursor: url('/pointer.png') 0 0, pointer !important;
   }
 }

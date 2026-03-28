@@ -124,7 +124,7 @@ export function Experience() {
                                         href={exp.link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-6 inline-flex items-center gap-2 font-serif text-[8px] tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group cursor-none"
+                                        className="mt-6 inline-flex items-center gap-2 font-serif text-[8px] tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group"
                                     >
                                         <ExternalLink className="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                                         {exp.link.label}

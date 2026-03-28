@@ -20,7 +20,7 @@ export default function Home() {
 
 
 
-      <main className="flex-1 z-10 cursor-none">
+      <main className="flex-1 z-10">
         <HeroLanding />
         <ProjectShowcase />
 
@@ -36,7 +36,7 @@ export default function Home() {
               <WatcherSprite className="absolute -bottom-4 -right-12 animate-watcher-bob opacity-40 hidden md:block" />
             </span>
           </h2>
-          <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-12 md:h-14 px-8 md:px-10 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest cursor-none transition-colors">
+          <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-12 md:h-14 px-8 md:px-10 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest transition-colors">
             <Link href="mailto:shreyakbinbox@gmail.com">
               Get in Touch <Mail className="ml-3 h-4 w-4" />
             </Link>
@@ -49,7 +49,7 @@ export default function Home() {
                 href="https://github.com/Shreyakb301"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
               >
                 GitHub
               </a>
@@ -57,7 +57,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/shreya-komarabattini"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
               >
                 LinkedIn
               </a>
@@ -65,7 +65,7 @@ export default function Home() {
                 href="https://calendly.com/shreyakbinbox/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none"
+                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
               >
                 Schedule
               </a>
@@ -75,7 +75,7 @@ export default function Home() {
               href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-serif text-[8px] md:text-[10px] text-primary/60 hover:text-primary tracking-widest uppercase transition-colors duration-200 cursor-none max-w-xs md:max-w-none leading-relaxed"
+              className="font-serif text-[8px] md:text-[10px] text-primary/60 hover:text-primary tracking-widest uppercase transition-colors duration-200 max-w-xs md:max-w-none leading-relaxed"
             >
               read my technical ramblings & research notes → <span className="border-b border-primary/40 pb-0.5">Notion Collection</span>
             </a>

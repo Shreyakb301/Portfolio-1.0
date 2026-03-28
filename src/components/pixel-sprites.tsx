@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 
 const S = 4
 
@@ -11,79 +11,7 @@ type SpriteProps = {
 
 // ── Custom Cursor ──
 export function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null)
-  const [isHovering, setIsHovering] = useState(false)
-
-  useEffect(() => {
-    let currentHoverState = false;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.left = e.clientX + 'px'
-        cursorRef.current.style.top = e.clientY + 'px'
-      }
-
-      const target = e.target as HTMLElement
-      const clickable = target.closest('a, button, [role="button"]')
-      const isNowHovering = !!clickable
-
-      if (currentHoverState !== isNowHovering) {
-        currentHoverState = isNowHovering;
-        setIsHovering(isNowHovering);
-      }
-    }
-
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (!isTouchDevice) {
-      document.body.classList.add('no-native-cursor')
-      document.addEventListener('mousemove', handleMouseMove)
-      return () => {
-        document.body.classList.remove('no-native-cursor')
-        document.removeEventListener('mousemove', handleMouseMove)
-      }
-    }
-  }, [])
-
-  const arrowRows = [
-    [1, 0, 0, 0, 0, 0, 0],
-    [1, 1, 0, 0, 0, 0, 0],
-    [1, 2, 1, 0, 0, 0, 0],
-    [1, 2, 2, 1, 0, 0, 0],
-    [1, 2, 2, 2, 1, 0, 0],
-    [1, 2, 2, 2, 2, 1, 0],
-    [1, 2, 2, 2, 2, 2, 1],
-    [1, 2, 2, 1, 1, 1, 0],
-    [1, 2, 1, 0, 0, 0, 0],
-    [1, 1, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0],
-  ]
-
-  const handRows = [
-    [0, 0, 1, 1, 0, 0, 0, 0],
-    [0, 0, 1, 2, 1, 0, 0, 0],
-    [0, 0, 1, 2, 1, 0, 0, 0],
-    [0, 1, 1, 2, 1, 1, 1, 0],
-    [1, 2, 2, 2, 2, 2, 2, 1],
-    [1, 2, 2, 2, 2, 2, 2, 1],
-    [1, 2, 2, 2, 2, 2, 2, 1],
-    [0, 1, 2, 2, 2, 2, 1, 0],
-    [0, 0, 1, 1, 1, 1, 0, 0],
-  ]
-
-  return (
-    <div
-      ref={cursorRef}
-      className="fixed pointer-events-none z-[9999] hidden sm:block transition-transform duration-75"
-      style={{ transform: isHovering ? 'translate(-8px, -2px)' : 'translate(0px, 0px)' }}
-    >
-      <PixelCanvas
-        id="sp-cursor"
-        scale={3}
-        rows={isHovering ? handRows : arrowRows}
-        palette={{ 1: '#1a1a2e', 2: '#fcf9f5' }}
-      />
-    </div>
-  )
+  return null;
 }
 
 // ── Generic pixel sprite renderer ──
