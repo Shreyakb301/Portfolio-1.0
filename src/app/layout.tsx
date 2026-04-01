@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, DM_Sans, Press_Start_2P } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -33,6 +34,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LKK0ZHCNC5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-LKK0ZHCNC5');
+          `}
+        </Script>
+      </head>
       <body
         className={`${instrumentSerif.variable} ${dmSans.variable} ${pressStart2P.variable} font-sans antialiased selection:bg-primary/20`}
       >
