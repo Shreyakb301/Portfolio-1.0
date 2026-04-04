@@ -11,6 +11,27 @@ export function Experience() {
         link?: { url: string; label: string }
     }[] = [
             {
+                title: "Systems Software Assistant",
+                company: "Purdue University",
+                date: "08/2023 – Present",
+                description: [
+                    "Re-imaged, configured, and maintained 100+ lab computers, ensuring consistent OS, software installations, and security updates.",
+                    "Resolved 1,500+ hardware and software tickets, maintaining 99% lab uptime and minimizing disruptions for students and faculty.",
+                    "Performed routine diagnostics, printer maintenance, and troubleshooting of technical equipment.",
+                    "Collaborated with IT staff while independently managing lab systems, providing front-line technical support, and planning and promoting lab events.",
+                ],
+            },
+            {
+                title: "Summer Camp Assistant",
+                company: "Purdue University",
+                date: "2025",
+                description: [
+                    "Represented the Computer Science department during a high-school summer camp program.",
+                    "Assisted students with technical activities and project development.",
+                    "Conducted research on prompt engineering and evaluated student capstone posters using AI-based tools.",
+                ],
+            },
+            {
                 title: "Undergraduate Researcher",
                 company: "Do We Really Know How to Use Graphs Effectively",
                 advisor: "Advisor: Dr. Beomjin Kim",
@@ -35,32 +56,11 @@ export function Experience() {
                 link: { url: "https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023", label: "View Analysis on Kaggle" },
             },
             {
-                title: "Systems Software Assistant",
-                company: "Purdue University",
-                date: "08/2023 – Present",
-                description: [
-                    "Re-imaged, configured, and maintained 100+ lab computers, ensuring consistent OS, software installations, and security updates.",
-                    "Resolved 1,500+ hardware and software tickets, maintaining 99% lab uptime and minimizing disruptions for students and faculty.",
-                    "Performed routine diagnostics, printer maintenance, and troubleshooting of technical equipment.",
-                    "Collaborated with IT staff while independently managing lab systems, providing front-line technical support, and planning and promoting lab events.",
-                ],
-            },
-            {
                 title: "Teaching Assistant – Senior Capstone Project",
                 company: "Purdue University",
                 date: "",
                 description: [
                     "Assisted in evaluating capstone project reports and presentations, leveraging Python scripts to support data processing and review pipelines.",
-                ],
-            },
-            {
-                title: "Summer Camp Assistant",
-                company: "Purdue University",
-                date: "2025",
-                description: [
-                    "Represented the Computer Science department during a high-school summer camp program.",
-                    "Assisted students with technical activities and project development.",
-                    "Conducted research on prompt engineering and evaluated student capstone posters using AI-based tools.",
                 ],
             },
             {
@@ -94,7 +94,7 @@ export function Experience() {
                                     {exp.date && (
                                         <Badge
                                             variant="secondary"
-                                            className="self-start shrink-0 font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase"
+                                            className="self-start shrink-0 font-sans text-xs tracking-widest px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase"
                                         >
                                             {exp.date}
                                         </Badge>
@@ -102,10 +102,10 @@ export function Experience() {
                                 </div>
 
                                 {/* Company + Advisor */}
-                                <p className="font-serif text-[10px] md:text-[11px] text-primary tracking-widest uppercase mb-1">
+                                <p className="font-sans text-xs text-primary tracking-widest uppercase mb-1">
                                     {exp.company}
                                     {exp.advisor && (
-                                        <span className="block text-[8px] text-muted-foreground mt-1.5">{exp.advisor}</span>
+                                        <span className="block text-[10px] text-muted-foreground mt-1.5 font-sans">{exp.advisor}</span>
                                     )}
                                 </p>
 
@@ -124,7 +124,7 @@ export function Experience() {
                                         href={exp.link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-6 inline-flex items-center gap-2 font-serif text-[8px] tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group"
+                                        className="mt-6 inline-flex items-center gap-2 font-sans text-xs tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group"
                                     >
                                         <ExternalLink className="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                                         {exp.link.label}

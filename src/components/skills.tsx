@@ -17,12 +17,12 @@ export function Skills() {
                 {Object.entries(skills).map(([category, items]) => (
                     <Card key={category} className="rounded-none border-2 border-primary/20 bg-background shadow-none">
                         <CardHeader className="pb-4">
-                            <CardTitle className="font-serif text-[10px] md:text-xs tracking-widest uppercase text-primary leading-relaxed">{category}</CardTitle>
+                            <CardTitle className="font-serif text-xs md:text-sm tracking-widest uppercase text-primary leading-relaxed">{category}</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="flex flex-wrap gap-2.5 mt-2">
                                 {items.map((item) => (
-                                    <Badge key={item} variant="secondary" className="font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
+                                    <Badge key={item} variant="secondary" className="font-sans text-[10px] md:text-[11px] tracking-widest px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
                                         {item}
                                     </Badge>
                                 ))}

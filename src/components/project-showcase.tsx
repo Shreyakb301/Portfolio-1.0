@@ -57,18 +57,15 @@ export function ProjectShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
-                className="mb-20 md:mb-32 flex flex-col items-start"
+                className="mb-12 md:mb-16 flex flex-col items-start"
             >
-                <span className="font-serif text-xs font-semibold tracking-widest text-primary mb-4 flex items-center">
+                <span className="font-heading text-xl md:text-2xl text-primary mb-2 flex items-center">
                     <span className="text-muted-foreground mr-3">//</span>
-                    <span>SELECTED WORK</span>
+                    <span>Selected Work</span>
                     <span className="inline-flex items-center ml-4">
                         <CoinSprite className="animate-coin-spin opacity-40 static" />
                     </span>
                 </span>
-
-
-
             </motion.div>
 
             <div className="flex flex-col border-x border-t lg:border border-primary/20">
@@ -134,8 +131,8 @@ export function ProjectShowcase() {
                                 {/* Removed WatcherSprite in favor of specific project accents */}
 
                                 <div className="flex flex-col gap-2 mb-6">
-                                    <span className="font-serif text-xs text-primary/40 tracking-[0.2em]">{String(index + 1).padStart(2, '0')}</span>
-                                    <span className="font-serif text-xs text-primary/70">{project.year}</span>
+                                    <span className="font-sans text-xs text-primary/40 tracking-widest">{String(index + 1).padStart(2, '0')}</span>
+                                    <span className="font-sans text-xs text-primary/70">{project.year}</span>
                                 </div>
 
                                 <div className="flex items-center gap-4 mb-6">
@@ -143,7 +140,7 @@ export function ProjectShowcase() {
                                         {project.title}
                                     </h3>
                                     {'status' in project && (
-                                        <Badge variant="secondary" className="font-serif text-[7px] md:text-[8px] bg-primary/10 text-primary border-none py-1 px-2 uppercase tracking-widest animate-pulse">
+                                        <Badge variant="secondary" className="font-space text-[10px] bg-primary/10 text-primary border-none py-1 px-2 uppercase tracking-widest animate-pulse">
                                             {project.status as string}
                                         </Badge>
                                     )}
@@ -155,7 +152,7 @@ export function ProjectShowcase() {
 
                                 <div className="flex flex-wrap gap-2 mb-8">
                                     {project.tags.map((tag) => (
-                                        <span key={tag} className="font-serif text-[10px] text-primary border border-primary/40 px-3 py-1.5 tracking-wider uppercase">
+                                        <span key={tag} className="font-sans text-[11px] md:text-sm text-primary border border-primary/40 px-3 py-1.5 tracking-wider uppercase">
                                             {tag}
                                         </span>
                                     ))}
@@ -167,7 +164,7 @@ export function ProjectShowcase() {
                                             href={project.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-block font-serif text-[10px] text-background bg-primary border-2 border-primary px-5 py-3 tracking-wider uppercase hover:bg-transparent hover:text-primary transition-colors"
+                                            className="inline-block font-sans text-sm text-background bg-primary border-2 border-primary px-5 py-3 tracking-widest uppercase hover:bg-transparent hover:text-primary transition-colors"
                                         >
                                             View Project
                                         </Link>
@@ -177,7 +174,7 @@ export function ProjectShowcase() {
                                             href={project.github as string}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center justify-center gap-2 font-serif text-[10px] text-primary border-2 border-primary px-5 py-3 tracking-wider uppercase hover:bg-primary hover:text-background transition-colors"
+                                            className="inline-flex items-center justify-center gap-2 font-sans text-sm text-primary border-2 border-primary px-5 py-3 tracking-widest uppercase hover:bg-primary hover:text-background transition-colors"
                                         >
                                             <Github className="w-3 h-3 md:w-3.5 md:h-3.5" /> Code
                                         </Link>

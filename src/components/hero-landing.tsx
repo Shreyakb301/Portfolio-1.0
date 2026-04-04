@@ -52,7 +52,7 @@ export function HeroLanding() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <p className="font-serif text-[8px] md:text-sm tracking-[0.2em] font-semibold text-foreground/80 uppercase">
+                        <p className="font-sans text-xs md:text-sm tracking-widest font-semibold text-foreground/80 uppercase">
                             &gt; CS Student @ Purdue · Class of 2026
                         </p>
                     </motion.div>
@@ -91,12 +91,12 @@ export function HeroLanding() {
                         transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
                         className="flex flex-wrap items-center gap-3 md:gap-4 mt-6"
                     >
-                        <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-11 md:h-12 px-6 md:px-8 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest transition-colors">
+                        <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-11 md:h-12 px-6 md:px-8 text-xs md:text-sm font-sans shadow-none uppercase tracking-widest transition-colors">
                             <Link href="#work">
                                 See my work <ArrowRight className="ml-2 h-4 w-4 hidden" />
                             </Link>
                         </Button>
-                        <Button asChild size="lg" variant="ghost" className="rounded-none bg-transparent text-muted-foreground border-2 border-muted-foreground hover:border-primary hover:text-primary h-11 md:h-12 px-6 md:px-8 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest transition-colors">
+                        <Button asChild size="lg" variant="ghost" className="rounded-none bg-transparent text-muted-foreground border-2 border-muted-foreground hover:border-primary hover:text-primary h-11 md:h-12 px-6 md:px-8 text-xs md:text-sm font-sans shadow-none uppercase tracking-widest transition-colors">
                             <Link href="mailto:shreyakbinbox@gmail.com">
                                 Get in touch
                             </Link>

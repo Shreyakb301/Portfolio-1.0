@@ -18,13 +18,13 @@ export function SiteHeader() {
                     <nav className="flex items-center gap-4 md:gap-12">
                         <Link
                             href="/about"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
+                            className="font-sans text-xs md:text-sm text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
                         >
                             About
                         </Link>
                         <Link
                             href="/#work"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
+                            className="font-sans text-xs md:text-sm text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
                         >
                             Work
                         </Link>
@@ -32,7 +32,7 @@ export function SiteHeader() {
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-serif text-[9px] md:text-[10px] text-muted-foreground hover:text-primary tracking-[0.2em] uppercase transition-colors duration-200"
+                            className="font-sans text-xs md:text-sm text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
                         >
                             Resume
                         </a>

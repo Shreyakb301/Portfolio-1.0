@@ -7,10 +7,10 @@ export function Education() {
             <Card className="rounded-none border-2 border-primary/20 bg-background shadow-none">
                 <CardHeader>
                     <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
-                        <CardTitle className="font-serif text-[10px] md:text-xs tracking-widest uppercase text-primary leading-relaxed">Bachelor of Science in <br className="hidden md:block"/>Computer Science</CardTitle>
-                        <span className="font-serif text-[8px] tracking-[0.2em] px-2.5 py-1.5 bg-primary/10 text-primary uppercase">2026</span>
+                        <CardTitle className="font-heading text-xs md:text-sm tracking-widest uppercase text-primary leading-relaxed">Bachelor of Science in <br className="hidden md:block"/>Computer Science</CardTitle>
+                        <span className="font-sans text-xs tracking-widest px-2.5 py-1.5 bg-primary/10 text-primary uppercase">2026</span>
                     </div>
-                    <p className="font-serif text-[10px] tracking-widest text-muted-foreground uppercase pt-4">Purdue University</p>
+                    <p className="font-sans text-xs tracking-widest text-muted-foreground uppercase pt-4">Purdue University</p>
                 </CardHeader>
             </Card>
         </section>

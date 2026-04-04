@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, DM_Sans, Press_Start_2P } from "next/font/google";
+import { Instrument_Serif, DM_Sans, Press_Start_2P, Space_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script";
 import "./globals.css";
@@ -20,6 +20,12 @@ const pressStart2P = Press_Start_2P({
   variable: "--font-press-start",
   subsets: ["latin"],
   weight: "400",
+});
+
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -52,7 +58,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${instrumentSerif.variable} ${dmSans.variable} ${pressStart2P.variable} font-sans antialiased selection:bg-primary/20`}
+        className={`${instrumentSerif.variable} ${dmSans.variable} ${pressStart2P.variable} ${spaceMono.variable} font-sans antialiased selection:bg-primary/20`}
       >
         {children}
         <Analytics />
