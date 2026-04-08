@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, DM_Sans, Press_Start_2P, Space_Mono } from "next/font/google";
+import { DM_Sans, Share_Tech_Mono, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script";
 import "./globals.css";
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -16,16 +10,16 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "700"],
 });
 
-const pressStart2P = Press_Start_2P({
-  variable: "--font-press-start",
+const shareTechMono = Share_Tech_Mono({
+  variable: "--font-share-tech-mono",
   subsets: ["latin"],
   weight: "400",
 });
 
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
+const vt323 = VT323({
+  variable: "--font-vt323",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -58,7 +52,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${instrumentSerif.variable} ${dmSans.variable} ${pressStart2P.variable} ${spaceMono.variable} font-sans antialiased selection:bg-primary/20`}
+        className={`${dmSans.variable} ${shareTechMono.variable} ${vt323.variable} font-sans antialiased selection:bg-primary/20`}
       >
         {children}
         <Analytics />
@@ -66,4 +60,3 @@ export default function RootLayout({
     </html>
   );
 }
-

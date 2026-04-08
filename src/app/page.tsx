@@ -8,7 +8,7 @@ import { CustomCursor, GhostSprite, FlowerSprite, WatcherSprite } from "@/compon
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col relative overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-x-clip bg-background">
 
       <CustomCursor />
       <SiteHeader />
@@ -20,75 +20,79 @@ export default function Home() {
 
 
 
-      <main className="flex-1 z-10">
+      <main className="z-10 flex-1">
         <HeroLanding />
         <ProjectShowcase />
 
         {/* CTA Section */}
-        <section className="container mx-auto py-24 md:py-48 px-4 md:px-12 flex flex-col items-center justify-center text-center">
-          <span className="font-serif text-[8px] md:text-[10px] tracking-[0.2em] font-semibold uppercase text-primary mb-6 flex items-center gap-3">
-            <span className="text-muted-foreground">//</span> Connect With Me
-          </span>
-          <h2 className="font-serif text-2xl md:text-5xl lg:text-6xl tracking-tight text-foreground mb-10 md:mb-12 leading-relaxed relative">
-            Let&apos;s build something <br />
-            <span className="text-primary relative inline-block">
-              together_
-              <WatcherSprite className="absolute -bottom-4 -right-12 animate-watcher-bob opacity-40 hidden md:block" />
-            </span>
-          </h2>
-          <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground border-2 border-primary hover:bg-transparent hover:text-primary h-12 md:h-14 px-8 md:px-10 text-[10px] md:text-xs font-serif shadow-none uppercase tracking-widest transition-colors">
-            <Link href="mailto:shreyakbinbox@gmail.com">
-              Get in Touch <Mail className="ml-3 h-4 w-4" />
-            </Link>
-          </Button>
-
-          {/* Social Links below Get in Touch */}
-          <div className="flex flex-col items-center gap-8 mt-12">
-            <div className="flex items-center gap-6 md:gap-10">
-              <a
-                href="https://github.com/Shreyakb301"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/shreya-komarabattini"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://calendly.com/shreyakbinbox/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-[8px] md:text-[10px] text-muted-foreground hover:text-primary tracking-widest uppercase transition-colors duration-200"
-              >
-                Schedule
-              </a>
+        <section className="connect-sec spike-b spike-t">
+          <div className="container">
+            <div className="sec-label mx-auto mb-12 max-w-[360px] justify-center">Connect With Me</div>
+            <h2 className="connect-heading">
+              Let&apos;s build something <br />
+              <span className="relative inline-block">
+                together_
+                <WatcherSprite className="absolute -bottom-4 -right-12 hidden animate-watcher-bob opacity-35 md:block" />
+              </span>
+            </h2>
+            <div className="mb-8">
+            <Button asChild size="lg" variant="ghost" className="retro-btn rounded-none shadow-none">
+              <Link href="mailto:shreyakbinbox@gmail.com">
+                Get in Touch <Mail className="ml-3 h-4 w-4" />
+              </Link>
+            </Button>
             </div>
 
-            <a
-              href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-serif text-[8px] md:text-[10px] text-primary/60 hover:text-primary tracking-widest uppercase transition-colors duration-200 max-w-xs md:max-w-none leading-relaxed"
-            >
-              read my technical ramblings & research notes → <span className="border-b border-primary/40 pb-0.5">Notion Collection</span>
-            </a>
+            {/* Social Links below Get in Touch */}
+            <div className="flex flex-col items-center">
+              <div className="connect-links">
+                <a
+                  href="https://github.com/Shreyakb301"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="c-link"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/shreya-komarabattini"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="c-link"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://calendly.com/shreyakbinbox/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="c-link"
+                >
+                  Schedule
+                </a>
+              </div>
+
+              <div className="mt-6">
+                <a
+                  href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="notion-link"
+                >
+                  read my technical ramblings & research notes → Notion Collection
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="py-12 md:py-16 border-t border-primary/20 z-10 w-full bg-background relative overflow-hidden">
-        <div className="container mx-auto flex flex-col items-center justify-center px-6 text-center">
+      <footer className="relative spike-sm-t overflow-hidden bg-background">
+        <div className="container site-footer relative justify-center">
           {/* Flower on left side of footer */}
           <FlowerSprite className="animate-flower-nod opacity-40 hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
 
-          <p className="font-serif text-[8px] md:text-[10px] text-primary/40 tracking-widest uppercase">
+          <p className="foot-copy">
             Shreya Komarabattini
           </p>
         </div>

@@ -1,7 +1,6 @@
-import { Badge } from "@/components/ui/badge"
 import { ExternalLink } from "lucide-react"
 
-export function Experience() {
+export function Experience({ showLabel = true }: { showLabel?: boolean }) {
     const experiences: {
         title: string
         company: string
@@ -76,55 +75,39 @@ export function Experience() {
 
     return (
         <section>
-            <h2 className="font-serif text-2xl md:text-3xl tracking-tight mb-12 text-foreground uppercase border-b border-primary/20 pb-4 inline-block">Experience</h2>
+            {showLabel && <div className="sec-label">Experience</div>}
 
-            <div className="relative">
-                {/* Vertical timeline line */}
-                <div className="absolute left-0 top-2 bottom-2 w-px bg-foreground/10" />
-
-                <div className="space-y-10">
+            <div className="tl">
+                <div>
                     {experiences.map((exp, index) => (
-                        <div key={index} className="relative pl-8">
-                            {/* Timeline dot — centered on the title row (top-[10px] aligns with first line of text) */}
-                            <div className="absolute left-[-4.5px] top-[10px] w-[9px] h-[9px] rounded-full bg-foreground/30 ring-2 ring-background" />
+                        <div key={index} className="tl-item">
+                            <div className="tl-dot-col">
+                                <div className="tl-dot" />
+                                <div className="tl-line" />
+                            </div>
 
-                            <div className="flex flex-col gap-1">
-                                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1.5 mb-2">
-                                    <h3 className="font-serif text-[10px] md:text-xs text-foreground leading-snug tracking-widest uppercase mt-0.5">{exp.title}</h3>
-                                    {exp.date && (
-                                        <Badge
-                                            variant="secondary"
-                                            className="self-start shrink-0 font-sans text-xs tracking-widest px-2.5 py-1.5 rounded-none bg-primary/10 text-primary border-none shadow-none uppercase"
-                                        >
-                                            {exp.date}
-                                        </Badge>
+                            <div className="tl-body">
+                                {exp.date && <div className="tl-date">{exp.date}</div>}
+                                <div className="tl-role">{exp.title}</div>
+                                <div className="tl-org">
+                                    {exp.company}
+                                    {exp.advisor && (
+                                        <span className="mt-1 block font-dm text-sm text-[color:var(--foreground-2)]">{exp.advisor}</span>
                                     )}
                                 </div>
 
-                                {/* Company + Advisor */}
-                                <p className="font-sans text-xs text-primary tracking-widest uppercase mb-1">
-                                    {exp.company}
-                                    {exp.advisor && (
-                                        <span className="block text-[10px] text-muted-foreground mt-1.5 font-sans">{exp.advisor}</span>
-                                    )}
-                                </p>
-
-                                {/* Description */}
-                                <ul className="mt-4 space-y-2.5 pl-3 md:pl-4 list-none border-l-2 border-primary/20">
+                                <ul className="tl-bullets">
                                     {exp.description.map((desc, i) => (
-                                        <li key={i} className="text-xs md:text-base text-foreground/70 leading-relaxed max-w-[68ch] relative before:absolute before:-left-3 md:before:-left-4 before:top-2 before:md:top-2.5 before:w-1.5 md:before:w-2 before:h-[2px] before:bg-primary/30">
-                                            {desc}
-                                        </li>
+                                        <li key={i}>{desc}</li>
                                     ))}
                                 </ul>
 
-                                {/* Link */}
                                 {exp.link && (
                                     <a
                                         href={exp.link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-6 inline-flex items-center gap-2 font-sans text-xs tracking-widest text-primary border-b border-primary/40 hover:border-primary pb-1 transition-colors duration-200 uppercase w-fit group"
+                                        className="subpage-link group mt-6 inline-flex items-center gap-2"
                                     >
                                         <ExternalLink className="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                                         {exp.link.label}
