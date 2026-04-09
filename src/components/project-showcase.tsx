@@ -5,8 +5,13 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Github } from "lucide-react"
 import { HeartSprite, CoinSprite } from "./pixel-sprites"
+import { cn } from "@/lib/utils"
 
-export function ProjectShowcase() {
+type ProjectShowcaseProps = {
+    className?: string
+}
+
+export function ProjectShowcase({ className }: ProjectShowcaseProps) {
     const projects = [
         {
             year: "2026",
@@ -49,7 +54,7 @@ export function ProjectShowcase() {
     ]
 
     return (
-        <section id="work" className="work-sec spike-b spike-t">
+        <section id="work" className={cn("work-sec spike-b spike-t", className)}>
             <div className="container relative">
                 <HeartSprite className="animate-heart-bounce hidden opacity-40 sm:block" style={{ top: '0.75rem', right: '0.5rem' }} />
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Sans, Share_Tech_Mono, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script";
@@ -25,6 +25,12 @@ const vt323 = VT323({
 export const metadata: Metadata = {
   title: "Shreya Komarabattini - Portfolio",
   description: "Computer Science Student and Developer",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

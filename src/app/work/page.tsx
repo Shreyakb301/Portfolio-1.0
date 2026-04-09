@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ProjectShowcase } from "@/components/project-showcase";
+import { PageHeaderIntro } from "@/components/page-header-intro";
 
 export default function WorkPage() {
   return (
@@ -48,16 +49,22 @@ export default function WorkPage() {
       <main className="flex-1">
         <section className="page-header spike-b">
           <div className="about-wrap page-header-inner">
-            <div className="page-eyebrow">Projects & Research</div>
-            <h1 className="page-title">
-              Work<span className="page-title-muted">.</span>
-            </h1>
+            <PageHeaderIntro
+              eyebrow="Projects & Research"
+              title={
+                <>
+                  Things I&apos;ve
+                  <br />
+                  built &amp; shipped<span className="page-title-muted">.</span>
+                </>
+              }
+              description="Four projects spanning interactive web apps, data engineering, and user research — each one trying to make something complex a little more legible."
+              titleClassName="work-page-title"
+            />
           </div>
         </section>
 
-        <div className="section-spacer" style={{ background: "var(--background)" }} />
-
-        <ProjectShowcase />
+        <ProjectShowcase className="work-page-showcase" />
       </main>
 
       <footer className="spike-sm-t">

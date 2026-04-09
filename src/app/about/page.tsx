@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageHeaderIntro } from "@/components/page-header-intro";
 
 const timelineItems = [
   {
@@ -25,7 +26,8 @@ const timelineItems = [
   {
     date: "09/2024 – 02/2025",
     title: "Undergraduate Researcher",
-    org: "Do We Really Know How to Use Graphs Effectively · Advisor: Dr. Beomjin Kim",
+    org: "Do We Really Know How to Use Graphs Effectively", 
+    Advisor: "Dr. Beomjin Kim",
     bullets: [
       "Investigated effective visualization of categorical data, analyzing how users interpret bar, line, and stacked bar charts.",
       "Designed user studies to evaluate visualization clarity and reduce misinterpretation by non-expert audiences.",
@@ -72,19 +74,27 @@ const skillColumns = [
   },
   {
     label: "Web Tech",
-    items: ["HTML", "CSS", "React.js"],
+    items: ["HTML", "CSS", "React.js", "Next.js/Vite"],
   },
   {
     label: "Backend & Data",
-    items: ["Node.js", "Express", "MongoDB"],
+    items: ["Node.js", "Express", "MongoDB", "REST APIs", "SQL"],
+  },
+  {
+    label: "AI / ML / NLP",
+    items: ["Machine Learning", "NLP", "LLMs", "Prompt Engineering", "Model Evaluation"],
   },
   {
     label: "Tools",
-    items: ["Git", "Jupyter Notebook", "JavaFX", "SceneBuilder"],
+    items: ["Git", "Jupyter Notebook", "JavaFX", "SceneBuilder", "Postman"],
   },
   {
     label: "Testing",
     items: ["Cypress", "Jest", "Supertest"],
+  },
+  {
+    label: "Core Concepts",
+    items: ["Data Structures & Algorithms", "OOP", "System Design", "API Design"],
   },
 ];
 
@@ -135,10 +145,14 @@ export default function AboutPage() {
       <main className="flex-1">
         <section className="page-header spike-b">
           <div className="about-wrap page-header-inner">
-            <div className="page-eyebrow">Background & Experience</div>
-            <h1 className="page-title">
-              About<span className="page-title-muted">.</span>
-            </h1>
+            <PageHeaderIntro
+              eyebrow="Background & Experience"
+              title={
+                <>
+                  About<span className="page-title-muted">.</span>
+                </>
+              }
+            />
           </div>
         </section>
 
