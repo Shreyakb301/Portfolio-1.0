@@ -68,11 +68,8 @@ export default function WorkPage() {
       </main>
 
       <footer className="spike-sm-t">
-        <div className="about-wrap site-footer">
+        <div className="about-wrap site-footer site-footer-centered">
           <span className="foot-copy">Shreya Komarabattini</span>
-          <Link href="/" className="foot-logo">
-            SKB_
-          </Link>
         </div>
       </footer>
     </div>

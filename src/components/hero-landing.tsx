@@ -62,9 +62,6 @@ export function HeroLanding() {
                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn hero-btn">
                             View Resume ↗
                         </a>
-                        <Link href="mailto:shreyakbinbox@gmail.com" className="btn hero-btn">
-                            Get in touch
-                        </Link>
                     </motion.div>
                 </div>
 

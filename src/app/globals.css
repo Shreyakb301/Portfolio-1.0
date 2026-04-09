@@ -1556,7 +1556,12 @@
   border-top: 1px solid var(--border);
 }
 
+.site-footer-centered {
+  justify-content: center;
+}
+
 .foot-copy {
+  text-align: center;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;

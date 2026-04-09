@@ -312,11 +312,8 @@ export default function AboutPage() {
       </main>
 
       <footer className="spike-sm-t bg-background">
-        <div className="about-wrap site-footer">
+        <div className="about-wrap site-footer site-footer-centered">
           <span className="foot-copy">Shreya Komarabattini</span>
-          <Link href="/" className="foot-logo">
-            SKB_
-          </Link>
         </div>
       </footer>
     </div>

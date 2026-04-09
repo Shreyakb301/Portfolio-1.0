@@ -88,7 +88,7 @@ export default function Home() {
       </main>
 
       <footer className="relative spike-sm-t overflow-hidden bg-background">
-        <div className="container site-footer relative justify-center">
+        <div className="container site-footer site-footer-centered relative">
           {/* Flower on left side of footer */}
           <FlowerSprite className="animate-flower-nod opacity-40 hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
 
