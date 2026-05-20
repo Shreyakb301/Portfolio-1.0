@@ -71,8 +71,17 @@ export function HeroLanding() {
                     transition={{ duration: 0.7, ease: "easeOut", delay: 0.35 }}
                     className="hero-deco"
                 >
-                    <StarSprite className="hero-plus static opacity-90" />
-                    <GameBotSprite className="hero-bot static opacity-95" />
+                    <div className="hero-card-shell" aria-hidden="true">
+                        <div className="hero-card-grid" />
+                        <div className="hero-card-bars">
+                            <span />
+                            <span />
+                            <span />
+                            <span />
+                        </div>
+                        <StarSprite className="hero-plus static opacity-90" />
+                        <GameBotSprite className="hero-bot static opacity-95" />
+                    </div>
                 </motion.div>
             </div>
         </section>

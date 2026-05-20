@@ -25,6 +25,16 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
             status: "Work in Progress"
         },
         {
+            year: "2025–26",
+            title: "Traffic Sign Recognition",
+            description: "Senior Capstone team project focused on developing a mobile application that detects and classifies traffic signs in real time using a trained deep learning model. The app enhances driver safety by delivering fast and accurate traffic sign recognition through a live camera feed.",
+            image: "",
+            video: "/traffic-sign-demo.mp4",
+            link: "/traffic-sign-demo.mp4",
+            github: "https://github.com/rishigxsh/Traffic-Sign-Recognition-App.git",
+            tags: ["Python", "Deep Learning", "Computer Vision", "Mobile"]
+        },
+        {
             year: "2025",
             title: "HealthyCal",
             description: "Full-stack nutrition tracker — React frontend, Node/Express API, MongoDB storage. Helps users stay aware of how different foods contribute to daily energy and nutrient goals.",
