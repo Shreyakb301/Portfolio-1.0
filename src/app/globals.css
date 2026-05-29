@@ -1531,10 +1531,6 @@
   border-bottom: none;
 }
 
-.tl-item:hover {
-  background: var(--background-3);
-}
-
 .tl-dot-col {
   display: flex;
   flex-direction: column;
