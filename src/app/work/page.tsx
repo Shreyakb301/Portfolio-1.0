@@ -58,7 +58,7 @@ export default function WorkPage() {
                   built &amp; shipped<span className="page-title-muted">.</span>
                 </>
               }
-              description="Four projects spanning interactive web apps, data engineering, and user research — each one trying to make something complex a little more legible."
+              description="Five projects spanning interactive web apps, data engineering, and user research — each one trying to make something complex a little more legible."
               titleClassName="work-page-title"
             />
           </div>
