@@ -1525,7 +1525,6 @@
   display: grid;
   grid-template-columns: 40px 1fr;
   border-bottom: 1px solid var(--border);
-  transition: background 0.12s;
 }
 
 .tl-item:last-child {
