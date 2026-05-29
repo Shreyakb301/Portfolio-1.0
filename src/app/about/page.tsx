@@ -272,7 +272,7 @@ export default function AboutPage() {
                 <div className="edu-title">B.S. Computer Science</div>
                 <div className="edu-sub">Purdue University · Fort Wayne, Indiana</div>
               </div>
-              <div className="edu-badge">Graduating 2026</div>
+              <div className="edu-badge">Graduated May 2026</div>
             </div>
           </div>
         </section>
