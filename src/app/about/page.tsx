@@ -165,7 +165,7 @@ export default function AboutPage() {
             <div className="about-grid">
               <div>
                 <p className="about-p">
-                  I&apos;m a Computer Science senior at Purdue University graduating in May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
+                  I&apos;m a Computer Science senior at Purdue University graduated in May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
                 </p>
                 <p className="about-p">
                   I&apos;ve worked across backend systems, interactive web applications, and data-driven projects, along with work on how models process and interpret language.
