@@ -3,7 +3,7 @@ import { PageHeaderIntro } from "@/components/page-header-intro";
 
 const timelineItems = [
   {
-    date: "08/2023 – Present",
+    date: "08/2023 – 05/2026",
     title: "Systems Software Assistant",
     org: "Purdue University",
     bullets: [
