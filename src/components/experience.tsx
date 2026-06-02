@@ -10,7 +10,7 @@ export function Experience({ showLabel = true }: { showLabel?: boolean }) {
         link?: { url: string; label: string }
     }[] = [
             {
-                title: "Systems Software Assistant",
+                title: "IT Lab Consultant",
                 company: "Purdue University",
                 date: "08/2023 – Present",
                 description: [

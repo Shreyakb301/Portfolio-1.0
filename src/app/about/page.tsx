@@ -4,7 +4,7 @@ import { PageHeaderIntro } from "@/components/page-header-intro";
 const timelineItems = [
   {
     date: "08/2023 – 05/2026",
-    title: "Systems Software Assistant",
+    title: "IT Lab Consultant",
     org: "Purdue University",
     bullets: [
       "Re-imaged, configured, and maintained 100+ lab computers, ensuring consistent OS, software installations, and security updates.",
