@@ -57,7 +57,7 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
             title: "Categorical Data Visualization Study",
             description: "Investigated how users interpret bar, line, and stacked bar charts. Designed user studies to evaluate visualization clarity, and formulated evidence-based guidelines for better data comprehension. Presented at Purdue's Annual Research Symposium.",
             image: "/research-poster.png",
-            link: "/PosterSample.pdf",
+            link: "/resesarch_poster.pdf",
             tags: ["Research", "User Study", "Data Viz"],
             borderless: true
         }

@@ -34,7 +34,7 @@ const timelineItems = [
       "Formulated evidence-based guidelines for selecting appropriate chart types to improve data comprehension.",
       "Presented findings at the 28th Annual Student Research and Creative Endeavors Symposium.",
     ],
-    link: { url: "/PosterSample.pdf", label: "View Research Poster →" },
+    link: { url: "/resesarch_poster.pdf", label: "View Research Poster →" },
   },
   {
     date: "2023",
