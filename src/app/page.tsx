@@ -4,21 +4,12 @@ import { ProjectShowcase } from "@/components/project-showcase";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { CustomCursor, GhostSprite, FlowerSprite, WatcherSprite } from "@/components/pixel-sprites";
+import { FlowerSprite, WatcherSprite } from "@/components/pixel-sprites";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-clip bg-background">
-
-      <CustomCursor />
+    <div className="pp-shell relative flex min-h-screen flex-col overflow-x-clip bg-background">
       <SiteHeader />
-
-      {/* Ghost peeks from bottom-right corner */}
-      <div className="fixed bottom-0 right-10 overflow-hidden h-[80px] w-[60px] z-50 pointer-events-none hidden md:block">
-        <GhostSprite className="animate-ghost-peek bottom-0 left-1/2 -translate-x-1/2" />
-      </div>
-
-
 
       <main className="z-10 flex-1">
         <HeroLanding />

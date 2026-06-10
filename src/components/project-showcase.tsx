@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Github } from "lucide-react"
-import { HeartSprite, CoinSprite } from "./pixel-sprites"
+import { HeartSprite, CoinSprite, PeekingSprite } from "./pixel-sprites"
 import { cn } from "@/lib/utils"
 
 type ProjectShowcaseProps = {
@@ -108,6 +108,9 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
                                 >
                                     <div className={`proj-media-frame ${isBorderless ? "proj-media-frame-borderless" : ""}`}>
                                         <div className="relative h-full w-full">
+                                            {index === 0 && (
+                                                <PeekingSprite className="animate-ghost-peek absolute -top-8 right-6 z-10 hidden sm:block" />
+                                            )}
                                             {hasVideo ? (
                                                 <video
                                                     src={project.video}

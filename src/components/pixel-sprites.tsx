@@ -248,3 +248,16 @@ export function NotebookSprite(props: SpriteProps) {
     [2, 1, 1, 1, 2],
   ]} />
 }
+
+export function PeekingSprite(props: SpriteProps) {
+  return <PixelCanvas {...props} id="sp-peeking" scale={S} palette={{ 1: '#4a8c3f', 2: '#1a1a2e', 3: '#8cbf6f' }} rows={[
+    [0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+    [0, 0, 1, 1, 1, 0, 1, 1, 1, 0],
+    [0, 1, 1, 1, 1, 1, 0, 1, 0, 0],
+    [1, 1, 2, 1, 2, 1, 1, 1, 0, 0],
+    [1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+    [1, 1, 1, 2, 1, 1, 1, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+  ]} />
+}
