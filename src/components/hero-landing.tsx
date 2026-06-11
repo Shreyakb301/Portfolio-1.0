@@ -1,64 +1,70 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import { RobotSprite, StarSprite } from "./pixel-sprites"
 
 export function HeroLanding() {
     return (
-        <section className="pp-hero">
-            <div className="pp-hero-inner">
-                <div className="pp-hero-copy">
+        <section className="hero spike-b">
+            <div className="container hero-grid">
+                <div className="hero-content">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, ease: "easeOut" }}
-                        className="pp-badge"
+                        className="available-badge"
                     >
-                        <Sparkles aria-hidden="true" />
-                        Interactive engineering practice
+                        <span className="available-dot" />
+                        Open to work
                     </motion.div>
 
                     <motion.p
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
-                        className="pp-kicker"
+                        className="hero-eyebrow"
                     >
-                        Learn by doing
+                        Computer Science @ Purdue 26
                     </motion.p>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.65, ease: "easeOut", delay: 0.16 }}
-                        className="pp-title"
+                        className="hero-name"
                     >
-                        Practice systems and algorithms visually.
+                        Shreya Komarabattini
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.24 }}
-                        className="pp-subtitle"
+                        className="hero-tagline"
                     >
-                        Three tracks. Live demos. Challenge modes.
+                        I build software, data tools, and interactive systems that make complex ideas easier to understand.
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                        className="hero-tagline-2"
+                    >
+                        My work spans full-stack apps, data visualization research, machine learning, and human-centered interfaces.
                     </motion.p>
 
                     <motion.div
                         initial={{ opacity: 0, y: 14 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.32 }}
-                        className="pp-actions"
+                        className="hero-btns"
                     >
-                        <Link href="/work" className="pp-primary-btn">
-                            Start with a challenge
+                        <Link href="/work" className="btn hero-btn">
+                            View work
                             <ArrowRight aria-hidden="true" />
-                        </Link>
-                        <Link href="/work" className="pp-secondary-btn">
-                            Browse the learning tracks
                         </Link>
                     </motion.div>
                 </div>
@@ -67,19 +73,21 @@ export function HeroLanding() {
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: 0.18 }}
-                    className="pp-visual"
+                    className="hero-deco"
                     aria-hidden="true"
                 >
-                    <Image
-                        src="/protoplay-hero-art-transparent.png"
-                        alt=""
-                        fill
-                        priority
-                        sizes="(max-width: 900px) 100vw, 62vw"
-                        className="pp-visual-img"
-                    />
+                    <div className="hero-card-shell">
+                        <div className="hero-card-bars">
+                            <span />
+                            <span />
+                            <span />
+                            <span />
+                        </div>
+                        <div className="hero-card-grid" />
+                    </div>
+                    <StarSprite className="hero-plus" />
+                    <RobotSprite className="hero-bot" />
                 </motion.div>
-
             </div>
         </section>
     )

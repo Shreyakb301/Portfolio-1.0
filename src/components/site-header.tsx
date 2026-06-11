@@ -1,42 +1,44 @@
 import Link from "next/link"
-import { ArrowRight, BookOpen, Braces, GitBranch, Gauge } from "lucide-react"
 
 export function SiteHeader() {
     return (
-        <header className="pp-nav">
-            <div className="pp-nav-inner">
-                <Link href="/" className="pp-brand" aria-label="ProtoPlay home">
-                    <span className="pp-brand-mark">⌬</span>
-                    <span>ProtoPlay</span>
+        <header className="retro-nav">
+            <div className="about-wrap retro-nav-inner">
+                <Link href="/" className="nav-logo">
+                    SKB_
                 </Link>
 
-                <nav className="pp-pill-nav" aria-label="Primary">
-                    <Link href="/" className="pp-pill active">
-                        <Gauge aria-hidden="true" />
-                        Overview
-                    </Link>
-                    <Link href="/work" className="pp-pill">
-                        <GitBranch aria-hidden="true" />
-                        System Design
-                    </Link>
-                    <Link href="/work" className="pp-pill">
-                        <Braces aria-hidden="true" />
-                        Data Structures
-                    </Link>
-                    <Link href="/about" className="pp-pill">
-                        <BookOpen aria-hidden="true" />
-                        Programming Languages
-                    </Link>
-                </nav>
+                <ul className="nav-links">
+                    <li>
+                        <Link href="/" className="nav-link active">
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/work" className="nav-link">
+                            Work
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/about" className="nav-link">
+                            About
+                        </Link>
+                    </li>
+                    <li>
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-resume">
+                            Resume ↗
+                        </a>
+                    </li>
+                </ul>
 
-                <div className="pp-nav-actions">
-                    <Link href="/work" className="pp-track-link">
-                        Tracks
-                    </Link>
-                    <Link href="/work" className="pp-start-link">
-                        Start challenge
-                        <ArrowRight aria-hidden="true" />
-                    </Link>
+                <div className="about-nav-social">
+                    <a href="https://github.com/Shreyakb301" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/shreya-komarabattini" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:shreyakbinbox@gmail.com">Email</a>
                 </div>
             </div>
         </header>

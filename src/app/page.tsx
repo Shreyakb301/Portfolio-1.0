@@ -3,17 +3,32 @@ import { HeroLanding } from "@/components/hero-landing";
 import { ProjectShowcase } from "@/components/project-showcase";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { FlowerSprite, WatcherSprite } from "@/components/pixel-sprites";
 
 export default function Home() {
   return (
-    <div className="pp-shell relative flex min-h-screen flex-col overflow-x-clip bg-background">
+    <div className="relative flex min-h-screen flex-col overflow-x-clip bg-background">
       <SiteHeader />
 
       <main className="z-10 flex-1">
         <HeroLanding />
         <ProjectShowcase />
+
+        <section className="about-cta-sec">
+          <div className="container">
+            <div className="about-cta-inner">
+              <div>
+                <p className="about-cta-kicker">Background</p>
+                <h2 className="about-cta-title">More about my path, skills, and experience.</h2>
+              </div>
+              <Link href="/about" className="btn about-cta-btn">
+                About
+                <ArrowRight aria-hidden="true" />
+            </Link>
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="connect-sec spike-b spike-t">
