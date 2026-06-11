@@ -18,12 +18,8 @@ export default function Home() {
         <section className="about-cta-sec">
           <div className="container">
             <div className="about-cta-inner">
-              <div>
-                <p className="about-cta-kicker">Background</p>
-                <h2 className="about-cta-title">More about my path, skills, and experience.</h2>
-              </div>
               <Link href="/about" className="btn about-cta-btn">
-                About
+                About me
                 <ArrowRight aria-hidden="true" />
             </Link>
             </div>

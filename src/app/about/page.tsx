@@ -174,7 +174,7 @@ export default function AboutPage() {
                   Interested in problems where clarity is hard, building systems that are not just functional, but genuinely understandable to the people using them. This shows up in interface design, data visualization research, and NLP-related work.
                 </p>
                 <p className="about-p">
-                  Currently seeking internship or new grad roles to apply skills, continue learning, and contribute to meaningful systems. Available from May 2026.
+                  Currently seeking internship or new grad roles to apply skills, continue learning, and contribute to meaningful systems.
                 </p>
                 <div className="about-actions">
                   <a href="/resume.pdf" className="btn about-action" target="_blank" rel="noopener noreferrer">
@@ -244,6 +244,23 @@ export default function AboutPage() {
 
         <div className="section-spacer" style={{ background: "var(--background-2)" }} />
 
+        <section className="edu-strip spike-b spike-t">
+          <div className="about-wrap">
+            <div className="sec-label">Education</div>
+            <div className="spike-strip" />
+            <div className="edu-card">
+              <div className="edu-year">2026</div>
+              <div>
+                <div className="edu-title">B.S. Computer Science</div>
+                <div className="edu-sub">Purdue University · Fort Wayne, Indiana</div>
+              </div>
+              <div className="edu-badge">Graduated May 2026</div>
+            </div>
+          </div>
+        </section>
+
+        <div className="section-spacer" style={{ background: "var(--background-2)" }} />
+
         <section className="reading-sec spike-b spike-t">
           <div className="about-wrap">
             <div className="sec-label">Additional Reading</div>
@@ -257,23 +274,6 @@ export default function AboutPage() {
             >
               View Collection →
             </a>
-          </div>
-        </section>
-
-        <div className="section-spacer" style={{ background: "var(--background-2)" }} />
-
-        <section className="edu-strip spike-b spike-t">
-          <div className="about-wrap">
-            <div className="sec-label">Education</div>
-            <div className="spike-strip" />
-            <div className="edu-card">
-              <div className="edu-year">2026</div>
-              <div>
-                <div className="edu-title">B.S. Computer Science</div>
-                <div className="edu-sub">Purdue University · Fort Wayne, Indiana</div>
-              </div>
-              <div className="edu-badge">Graduated May 2026</div>
-            </div>
           </div>
         </section>
 
