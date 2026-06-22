@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { RobotSprite, StarSprite } from "./pixel-sprites"
+import { RobotSprite, StarSprite, WavingCharacterSprite } from "./pixel-sprites"
 
 export function HeroLanding() {
     return (
@@ -83,7 +83,16 @@ export function HeroLanding() {
                             <span />
                             <span />
                         </div>
-                        <div className="hero-card-grid" />
+                        <div className="hero-card-grid" style={{ overflow: 'hidden' }}>
+                            <motion.div
+                                initial={{ y: 80, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.65, ease: [0.34, 1.56, 0.64, 1], delay: 0.7 }}
+                                style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)' }}
+                            >
+                                <WavingCharacterSprite />
+                            </motion.div>
+                        </div>
                     </div>
                     <StarSprite className="hero-plus" />
                     <RobotSprite className="hero-bot" />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageHeaderIntro } from "@/components/page-header-intro";
 
@@ -164,8 +165,18 @@ export default function AboutPage() {
             <div className="spike-strip" />
             <div className="about-grid">
               <div>
+                <div style={{ width: 210, height: 210, borderRadius: '50%', overflow: 'hidden', marginBottom: '1.5rem', marginLeft: '7.5rem', flexShrink: 0 }}>
+                  <Image
+                    src="/shreya.png"
+                    alt="Shreya Komarabattini"
+                    width={210}
+                    height={210}
+                    style={{ objectFit: 'cover', objectPosition: 'center 55%', width: '100%', height: '100%', transform: 'scale(1.35)', transformOrigin: 'center 55%', filter: 'saturate(1.5)' }}
+                    priority
+                  />
+                </div>
                 <p className="about-p">
-                  I&apos;m a Computer Science senior at Purdue University graduated in May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
+                  I&apos;m a recent Computer Science graduate from Purdue University May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
                 </p>
                 <p className="about-p">
                   I&apos;ve worked across backend systems, interactive web applications, and data-driven projects, along with work on how models process and interpret language.
@@ -179,14 +190,6 @@ export default function AboutPage() {
                 <div className="about-actions">
                   <a href="/resume.pdf" className="btn about-action" target="_blank" rel="noopener noreferrer">
                     Download Résumé
-                  </a>
-                  <a
-                    href="https://www.notion.so/Write-ups-61fec7c005ac835dbf47019ccaec1688"
-                    className="btn about-action"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Read Notes →
                   </a>
                 </div>
               </div>

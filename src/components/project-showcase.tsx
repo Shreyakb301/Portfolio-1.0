@@ -45,6 +45,25 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
             tags: ["React", "Node.js", "MongoDB", "Vite"]
         },
         {
+            year: "2026",
+            title: "MEMETIME",
+            description: "An interactive museum tracing internet culture from 1996 to today. Visitors descend through 12 immersive environments, one per era: gallery vitrines, a meme genealogy lab built with React Flow, a viral spread simulator, a popularity landscape, and a pixel-art culture skyline. Every scene owns its own lighting, atmosphere, and motion language.",
+            image: "",
+            video: "/meme-time.mp4",
+            link: "https://meme-time.vercel.app/",
+            github: "https://github.com/Shreyakb301/meme-time",
+            tags: ["Next.js", "Three.js", "React Flow", "GSAP", "Framer Motion", "TypeScript"],
+        },
+        {
+            year: "2025",
+            title: "IT Ticket Routing Automation",
+            description: "End-to-end ML web app that reads free-text Helpdesk tickets and routes them to the right IT support group — predicting support group, issue type, and priority across 8 IT groups. Combines a trained NLP pipeline, a FastAPI backend, and a React dashboard with confidence scores and analytics.",
+            image: "/it-ticket-hp.png",
+            link: "#",
+            github: "https://github.com/Shreyakb301/IT-Text-Classification",
+            tags: ["Python", "FastAPI", "React", "scikit-learn", "XGBoost", "Docker"],
+        },
+        {
             year: "2023",
             title: "FW Crime Analysis",
             description: "Classified 150,000+ crime records using Python, identified violent vs. non-violent patterns, mapped geographic hotspots, and surfaced temporal trends for data-driven municipal insights.",
@@ -88,6 +107,7 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
                     const isEven = index % 2 === 0
                     const hasVideo = 'video' in project && project.video
                     const isBorderless = 'borderless' in project && project.borderless
+                    const shouldFillMedia = project.title === "MEMETIME"
 
                     return (
                         <div key={project.title} className={`proj-row ${isEven ? "" : "flip"}`}>
@@ -118,14 +138,14 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
                                                     loop
                                                     muted
                                                     playsInline
-                                                    className="h-full w-full object-contain"
+                                                    className={`h-full w-full ${shouldFillMedia ? "object-fill" : "object-contain"}`}
                                                 />
                                             ) : (
                                                 <Image
                                                     src={project.image}
                                                     alt={project.title}
                                                     fill
-                                                    className="object-contain"
+                                                    className={shouldFillMedia ? "object-fill" : "object-contain"}
                                                     priority={index === 0}
                                                     sizes="(max-width: 768px) 100vw, 50vw"
                                                 />
