@@ -2,16 +2,44 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { Github } from "lucide-react"
 import { HeartSprite, CoinSprite, PeekingSprite } from "./pixel-sprites"
 import { cn } from "@/lib/utils"
+
+const MOODLE_URL = "https://moodle-game.onrender.com"
+const IT_TICKET_URL = "https://it-ticket-automation-system.onrender.com"
+const RENDER_WAKE_URLS = [MOODLE_URL, IT_TICKET_URL]
 
 type ProjectShowcaseProps = {
     className?: string
 }
 
 export function ProjectShowcase({ className }: ProjectShowcaseProps) {
+    useEffect(() => {
+        const controller = new AbortController()
+        const timeout = window.setTimeout(() => controller.abort(), 8000)
+
+        Promise.allSettled(
+            RENDER_WAKE_URLS.map((url) =>
+                fetch(url, {
+                    mode: "no-cors",
+                    cache: "no-store",
+                    signal: controller.signal,
+                })
+            )
+        ).finally(() => {
+            // Render may still be waking up; the request itself is enough to start it.
+            window.clearTimeout(timeout)
+        })
+
+        return () => {
+            window.clearTimeout(timeout)
+            controller.abort()
+        }
+    }, [])
+
     const projects = [
         {
             year: "2026",
@@ -19,7 +47,7 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
             description: "Online drawing and guessing game you can play with friends. One person draws a secret word while the others try to guess it in the chat. You can make a room, invite others with a code, play against computer players, and even draw using hand gestures with your camera.",
             image: "",
             video: "/moodle-demo.mp4",
-            link: "https://moodle-game.onrender.com",
+            link: MOODLE_URL,
             tags: ["React", "Socket.IO", "PostgreSQL", "MediaPipe"],
         },
         {
@@ -68,7 +96,7 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
             title: "IT Ticket Routing Automation",
             description: "End-to-end ML web app that reads free-text Helpdesk tickets and routes them to the right IT support group, predicting support group, issue type, and priority across 8 IT groups. Combines a trained NLP pipeline, a FastAPI backend, and a React dashboard with confidence scores and analytics.",
             image: "/it-ticket-hp.png",
-            link: "https://it-ticket-automation-system.onrender.com",
+            link: IT_TICKET_URL,
             github: "https://github.com/Shreyakb301/IT-Text-Classification",
             tags: ["Python", "FastAPI", "React", "scikit-learn", "XGBoost", "Docker"],
         },
