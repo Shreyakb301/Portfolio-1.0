@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PageHeaderIntro } from "@/components/page-header-intro";
 
@@ -165,16 +164,11 @@ export default function AboutPage() {
             <div className="spike-strip" />
             <div className="about-grid">
               <div>
-                <div style={{ width: 210, height: 210, borderRadius: '50%', overflow: 'hidden', marginBottom: '1.5rem', marginLeft: '7.5rem', flexShrink: 0 }}>
-                  <Image
-                    src="/shreya.png"
-                    alt="Shreya Komarabattini"
-                    width={210}
-                    height={210}
-                    style={{ objectFit: 'cover', objectPosition: 'center 55%', width: '100%', height: '100%', transform: 'scale(1.35)', transformOrigin: 'center 55%', filter: 'saturate(1.5)' }}
-                    priority
-                  />
-                </div>
+                <div
+                  className="about-profile-photo"
+                  role="img"
+                  aria-label="Shreya Komarabattini"
+                />
                 <p className="about-p">
                   I&apos;m a recent Computer Science graduate from Purdue University May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
                 </p>

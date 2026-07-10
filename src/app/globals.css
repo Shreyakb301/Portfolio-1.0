@@ -1584,6 +1584,22 @@
   min-width: 0;
 }
 
+.about-profile-photo {
+  width: 210px;
+  height: 210px;
+  flex-shrink: 0;
+  margin: 0 0 1.5rem 7.5rem;
+  border-radius: 50%;
+  background-image: url('/about-profile.jpg');
+  background-size: 135% auto;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  filter: saturate(1.5);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 .about-p {
   margin-bottom: 1.25rem;
   max-width: 42rem;
@@ -2278,6 +2294,11 @@
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  .about-profile-photo {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-btns {
