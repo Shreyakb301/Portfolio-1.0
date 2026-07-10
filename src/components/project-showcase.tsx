@@ -15,6 +15,15 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
     const projects = [
         {
             year: "2026",
+            title: "Moodle",
+            description: "Online drawing and guessing game you can play with friends. One person draws a secret word while the others try to guess it in the chat. You can make a room, invite others with a code, play against computer players, and even draw using hand gestures with your camera.",
+            image: "",
+            video: "/moodle-demo.mp4",
+            link: "https://moodle-game.onrender.com",
+            tags: ["React", "Socket.IO", "PostgreSQL", "MediaPipe"],
+        },
+        {
+            year: "2026",
             title: "Protoplay",
             description: "Interactive platform that teaches engineering concepts through gamified simulations, architecture challenges, and algorithm puzzles by learning and building, not memorising.",
             image: "/protoplay-hp.png",
@@ -57,9 +66,9 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
         {
             year: "2025",
             title: "IT Ticket Routing Automation",
-            description: "End-to-end ML web app that reads free-text Helpdesk tickets and routes them to the right IT support group — predicting support group, issue type, and priority across 8 IT groups. Combines a trained NLP pipeline, a FastAPI backend, and a React dashboard with confidence scores and analytics.",
+            description: "End-to-end ML web app that reads free-text Helpdesk tickets and routes them to the right IT support group, predicting support group, issue type, and priority across 8 IT groups. Combines a trained NLP pipeline, a FastAPI backend, and a React dashboard with confidence scores and analytics.",
             image: "/it-ticket-hp.png",
-            link: "#",
+            link: "https://it-ticket-automation-system.onrender.com",
             github: "https://github.com/Shreyakb301/IT-Text-Classification",
             tags: ["Python", "FastAPI", "React", "scikit-learn", "XGBoost", "Docker"],
         },
@@ -107,7 +116,7 @@ export function ProjectShowcase({ className }: ProjectShowcaseProps) {
                     const isEven = index % 2 === 0
                     const hasVideo = 'video' in project && project.video
                     const isBorderless = 'borderless' in project && project.borderless
-                    const shouldFillMedia = project.title === "MEMETIME"
+                    const shouldFillMedia = project.title === "MEMETIME" || project.title === "Moodle"
 
                     return (
                         <div key={project.title} className={`proj-row ${isEven ? "" : "flip"}`}>

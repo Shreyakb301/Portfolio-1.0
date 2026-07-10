@@ -44,7 +44,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.24 }}
                         className="hero-tagline"
                     >
-                        I build software, data tools, and interactive systems that make complex ideas easier to understand.
+                        Software Engineer building full-stack &amp; NLP applications.
                     </motion.p>
 
                     <motion.p
