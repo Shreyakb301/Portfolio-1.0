@@ -8,7 +8,7 @@ import { Github } from "lucide-react"
 import { HeartSprite, CoinSprite, PeekingSprite } from "./pixel-sprites"
 import { cn } from "@/lib/utils"
 
-const MOODLE_URL = "https://moodle-game.onrender.com"
+const MOODLE_URL = "https://moodl3.com/"
 const IT_TICKET_URL = "https://it-ticket-automation-system.onrender.com"
 const RENDER_WAKE_URLS = [MOODLE_URL, IT_TICKET_URL]
 

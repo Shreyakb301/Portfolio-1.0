@@ -41,8 +41,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://moodle-game.onrender.com" />
-        <link rel="dns-prefetch" href="https://moodle-game.onrender.com" />
+        <link rel="preconnect" href="https://moodl3.com" />
+        <link rel="dns-prefetch" href="https://moodl3.com" />
         <link rel="preconnect" href="https://it-ticket-automation-system.onrender.com" />
         <link rel="dns-prefetch" href="https://it-ticket-automation-system.onrender.com" />
         {/* Google Analytics */}
