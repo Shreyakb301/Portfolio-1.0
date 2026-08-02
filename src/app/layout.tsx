@@ -30,7 +30,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -62,7 +61,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${dmSans.variable} ${shareTechMono.variable} ${vt323.variable} font-sans antialiased selection:bg-primary/20`}
+        className={`${dmSans.variable} ${shareTechMono.variable} ${vt323.variable} font-sans antialiased selection:bg-primary selection:text-primary-foreground`}
       >
         {children}
         <Analytics />

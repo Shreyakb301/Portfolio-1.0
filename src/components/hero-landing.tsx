@@ -63,7 +63,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.24 }}
                         className="hero-tagline"
                     >
-                        Software Engineer building full-stack &amp; NLP applications.
+                        Software Engineer building full-stack with AI applications.
                     </motion.p>
 
                     <motion.p
@@ -72,7 +72,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         className="hero-tagline-2"
                     >
-                        My work spans full-stack apps, data visualization research, machine learning, and human-centered interfaces.
+                        My work spans web application development, data visualization research, machine learning, and human-centered interfaces.
                     </motion.p>
 
                     <motion.div
@@ -81,8 +81,8 @@ export function HeroLanding() {
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.32 }}
                         className="hero-btns"
                     >
-                        <Link href="/work" className="btn hero-btn">
-                            View work
+                        <Link href="/about" className="btn hero-btn">
+                            About me
                             <ArrowRight aria-hidden="true" />
                         </Link>
                     </motion.div>
@@ -137,12 +137,6 @@ export function HeroLanding() {
                                 onClick={() => setFactStep((s) => (s === null ? 0 : s + 1))}
                                 aria-label={factStep === null ? "Show a fact about this page" : "Show the next fact"}
                             />
-
-                            {factStep === null && (
-                                <span className="hero-card-hint" aria-hidden="true">
-                                    click the grid
-                                </span>
-                            )}
                         </div>
                     </div>
                     <span aria-hidden="true">

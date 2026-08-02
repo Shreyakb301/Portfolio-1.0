@@ -213,7 +213,7 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
     return (
         <section id="work" className={cn("work-sec spike-b spike-t", className)}>
             <div className="container relative">
-                <HeartSprite className="animate-heart-bounce hidden opacity-40 sm:block" style={{ top: '0.75rem', right: '0.5rem' }} />
+                <HeartSprite className="animate-heart-bounce hidden sm:block" style={{ top: '0.75rem', right: '0.5rem' }} />
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -224,7 +224,7 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                     <div className="sec-label">
                         Selected Work
                         <span className="inline-flex items-center">
-                            <CoinSprite className="animate-coin-spin opacity-50 static" />
+                            <CoinSprite className="animate-coin-spin static" />
                         </span>
                     </div>
                     <div className="spike-strip" />

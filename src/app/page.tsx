@@ -34,7 +34,7 @@ export default function Home() {
               Let&apos;s build something <br />
               <span className="relative inline-block">
                 together_
-                <WatcherSprite className="absolute -bottom-4 -right-12 hidden animate-watcher-bob opacity-35 md:block" />
+                <WatcherSprite className="absolute -bottom-4 -right-12 hidden animate-watcher-bob md:block" />
               </span>
             </h2>
             <div className="mb-8">
@@ -92,7 +92,7 @@ export default function Home() {
       <footer className="relative spike-sm-t overflow-hidden bg-background">
         <div className="container site-footer site-footer-centered relative">
           {/* Flower on left side of footer */}
-          <FlowerSprite className="animate-flower-nod opacity-40 hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
+          <FlowerSprite className="animate-flower-nod hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
 
           <p className="foot-copy">
             Shreya Komarabattini
