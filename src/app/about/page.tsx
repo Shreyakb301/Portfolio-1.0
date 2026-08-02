@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PageHeaderIntro } from "@/components/page-header-intro";
 
 const timelineItems = [
   {
@@ -57,7 +56,7 @@ const timelineItems = [
     ],
   },
   {
-    date: "Ongoing",
+    date: "2023",
     title: "Leadership Involvement",
     org: "Purdue University",
     bullets: [
@@ -70,7 +69,7 @@ const timelineItems = [
 const skillColumns = [
   {
     label: "Languages",
-    items: ["Python", "Java", "C", "JavaScript"],
+    items: ["Python", "Java", "C++", "JavaScript"],
   },
   {
     label: "Web Tech",
@@ -86,7 +85,18 @@ const skillColumns = [
   },
   {
     label: "Tools",
-    items: ["Git", "Jupyter Notebook", "JavaFX", "SceneBuilder", "Postman"],
+    items: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Postman",
+      "VS Code",
+      "IntelliJ IDEA",
+      "Jupyter Notebook",
+      "Vercel",
+      "Render",
+      "MongoDB Atlas",
+    ],
   },
   {
     label: "Testing",
@@ -143,25 +153,11 @@ export default function AboutPage() {
       </header>
 
       <main className="flex-1">
-        <section className="page-header spike-b">
-          <div className="about-wrap page-header-inner">
-            <PageHeaderIntro
-              eyebrow="Background & Experience"
-              title={
-                <>
-                  About<span className="page-title-muted">.</span>
-                </>
-              }
-            />
-          </div>
-        </section>
-
-        <div className="section-spacer" style={{ background: "var(--background-2)" }} />
-
         <section className="about-sec spike-b spike-t">
           <div className="about-wrap">
             <div className="sec-label">Bio & Experience</div>
             <div className="spike-strip" />
+
             <div className="about-grid">
               <div>
                 <div
@@ -181,14 +177,29 @@ export default function AboutPage() {
                 <p className="about-p">
                   Currently seeking internship or new grad roles to apply skills, continue learning, and contribute to meaningful systems.
                 </p>
-                <div className="about-actions">
-                  <a href="/resume.pdf" className="btn about-action" target="_blank" rel="noopener noreferrer">
-                    Download Résumé
-                  </a>
+                <div className="about-skills-divider" aria-hidden="true" />
+
+                <div className="about-skills-box">
+                  <div className="about-skills-heading">Skills</div>
+                  {skillColumns.map((column) => (
+                    <div key={column.label} className="about-skills-row">
+                      <div className="about-skills-label">{column.label}</div>
+                      <div className="about-skills-items">{column.items.join(" · ")}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               <div className="tl">
+                <div className="edu-card about-timeline-education">
+                  <div className="edu-year">2026</div>
+                  <div>
+                    <div className="edu-title">B.S. Computer Science</div>
+                    <div className="edu-sub">Purdue University · Fort Wayne, Indiana</div>
+                  </div>
+                  <div className="edu-badge">Graduated May 2026</div>
+                </div>
+
                 {timelineItems.map((item, index) => (
                   <div key={`${item.title}-${index}`} className="tl-item">
                     <div className="tl-dot-col">
@@ -214,44 +225,6 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="section-spacer" style={{ background: "var(--background)" }} />
-
-        <section className="skills-sec spike-b spike-t">
-          <div className="about-wrap">
-            <div className="sec-label">Skills</div>
-            <div className="spike-strip" />
-            <div className="skills-grid">
-              {skillColumns.map((column) => (
-                <div key={column.label} className="skill-col">
-                  <div className="skill-col-label">{column.label}</div>
-                  <ul className="skill-list">
-                    {column.items.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <div className="section-spacer" style={{ background: "var(--background-2)" }} />
-
-        <section className="edu-strip spike-b spike-t">
-          <div className="about-wrap">
-            <div className="sec-label">Education</div>
-            <div className="spike-strip" />
-            <div className="edu-card">
-              <div className="edu-year">2026</div>
-              <div>
-                <div className="edu-title">B.S. Computer Science</div>
-                <div className="edu-sub">Purdue University · Fort Wayne, Indiana</div>
-              </div>
-              <div className="edu-badge">Graduated May 2026</div>
             </div>
           </div>
         </section>
