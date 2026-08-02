@@ -1,11 +1,30 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { RobotSprite, StarSprite, WavingCharacterSprite } from "./pixel-sprites"
+import { RobotSprite } from "./pixel-sprites"
+import { LifeGrid, FactReadout } from "./hero-visuals"
+
+// Every line here is drawn from the project write-ups on /work, so nothing in
+// the hero claims something that isn't already on the site. Swap in personal
+// ones freely — the readout just types whatever strings are in this array.
+const FACTS = [
+    "The shape drifting in this window is a Conway glider. Five cells that fly off one edge and come back on the other.",
+    "Classified 150,000+ crime records to map violent vs. non-violent hotspots across Fort Wayne.",
+    "MEMETIME walks you down through 12 environments, one per era of internet culture since 1996.",
+    "In Moodle you can draw with hand gestures through your webcam instead of a mouse.",
+    "Built an NLP pipeline that reads free-text helpdesk tickets and routes them across 8 IT groups.",
+    "Presented categorical data visualization research at Purdue's Annual Research Symposium.",
+]
 
 export function HeroLanding() {
+    // null = card shows only the glider. Counts up so each click remounts the
+    // readout and replays the typing.
+    const [factStep, setFactStep] = useState<number | null>(null)
+    const factIndex = factStep === null ? 0 : factStep % FACTS.length
+
     return (
         <section className="hero spike-b">
             <div className="container hero-grid">
@@ -74,28 +93,61 @@ export function HeroLanding() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: 0.18 }}
                     className="hero-deco"
-                    aria-hidden="true"
                 >
                     <div className="hero-card-shell">
-                        <div className="hero-card-bars">
+                        <div className="hero-card-bars" aria-hidden="true">
                             <span />
                             <span />
                             <span />
                             <span />
                         </div>
-                        <div className="hero-card-grid" style={{ overflow: 'hidden' }}>
+                        <div className="hero-card-grid">
                             <motion.div
-                                initial={{ y: 80, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.65, ease: [0.34, 1.56, 0.64, 1], delay: 0.7 }}
-                                style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)' }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+                                style={{ position: "absolute", inset: 0 }}
+                                aria-hidden="true"
                             >
-                                <WavingCharacterSprite />
+                                <LifeGrid cell={17} interval={450} />
                             </motion.div>
+
+                            {factStep !== null && (
+                                <motion.div
+                                    key={factStep}
+                                    initial={{ opacity: 0, y: 8 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.28, ease: "easeOut" }}
+                                    style={{ position: "absolute", inset: 0 }}
+                                >
+                                    <FactReadout
+                                        text={FACTS[factIndex]}
+                                        label={`fact ${String(factIndex + 1).padStart(2, "0")} / ${String(FACTS.length).padStart(2, "0")}`}
+                                    />
+                                </motion.div>
+                            )}
+
+                            {/* Covers the whole card so the grid itself is the
+                                control. A real button, so it's keyboard
+                                reachable — which is why .hero-deco is no longer
+                                aria-hidden. */}
+                            <button
+                                type="button"
+                                className="hero-card-hit"
+                                onClick={() => setFactStep((s) => (s === null ? 0 : s + 1))}
+                                aria-label={factStep === null ? "Show a fact about this page" : "Show the next fact"}
+                            />
+
+                            {factStep === null && (
+                                <span className="hero-card-hint" aria-hidden="true">
+                                    click the grid
+                                </span>
+                            )}
                         </div>
                     </div>
-                    <StarSprite className="hero-plus" />
-                    <RobotSprite className="hero-bot" />
+                    <span aria-hidden="true">
+                        <RobotSprite className="hero-bot" />
+                    </span>
                 </motion.div>
             </div>
         </section>
