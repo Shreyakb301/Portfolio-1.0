@@ -1780,21 +1780,15 @@
 }
 
 .about-profile-photo {
-  width: min(280px, calc(100% - 1rem));
-  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  width: min(330px, calc(100% - 2rem));
+  aspect-ratio: 1122 / 1402;
   flex-shrink: 0;
   margin: 0 auto 2rem;
-  border: 5px solid var(--border);
-  border-radius: 2px;
-  background-image: url('/about-profile.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--background);
-  box-shadow: 10px 10px 0 rgba(74, 96, 32, 0.18);
-  filter: saturate(1.08) contrast(1.02);
-  -webkit-transform: rotate(-3deg) translateZ(0);
-  transform: rotate(-3deg) translateZ(0);
+  border: 4px solid var(--border);
+  background: url('/about-profile-green.webp') center / contain no-repeat;
+  box-shadow: 8px 8px 0 rgba(74, 96, 32, 0.16);
+  transform: rotate(-2.5deg) translateZ(0);
   transform-origin: center;
 }
 
