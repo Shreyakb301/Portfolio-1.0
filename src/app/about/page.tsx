@@ -37,7 +37,7 @@ const timelineItems = [
   },
   {
     date: "2023",
-    title: "Research: Fort Wayne Crimes",
+    title: "Research: Fort Wayne Crimes, Indiana",
     org: "Purdue University",
     bullets: [
       "Analyzed 150,000+ crime records using Python to classify incidents as violent or non-violent.",

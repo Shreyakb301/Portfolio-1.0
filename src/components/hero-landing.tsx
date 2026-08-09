@@ -3,27 +3,17 @@
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Download } from "lucide-react"
 import { RobotSprite } from "./pixel-sprites"
 import { LifeGrid, FactReadout } from "./hero-visuals"
 
-// Every line here is drawn from the project write-ups on /work, so nothing in
-// the hero claims something that isn't already on the site. Swap in personal
-// ones freely — the readout just types whatever strings are in this array.
-const FACTS = [
-    "The shape drifting in this window is a Conway glider. Five cells that fly off one edge and come back on the other.",
-    "Classified 150,000+ crime records to map violent vs. non-violent hotspots across Fort Wayne.",
-    "MEMETIME walks you down through 12 environments, one per era of internet culture since 1996.",
-    "In Moodle you can draw with hand gestures through your webcam instead of a mouse.",
-    "Built an NLP pipeline that reads free-text helpdesk tickets and routes them across 8 IT groups.",
-    "Presented categorical data visualization research at Purdue's Annual Research Symposium.",
-]
+const CONWAY_FACT =
+    "The shape drifting in this window is a Conway glider. Five cells that fly off one edge and come back on the other."
 
 export function HeroLanding() {
-    // null = card shows only the glider. Counts up so each click remounts the
-    // readout and replays the typing.
+    // null = card shows only the glider. Counts up so another click can replay
+    // the same Conway fact and its typing animation.
     const [factStep, setFactStep] = useState<number | null>(null)
-    const factIndex = factStep === null ? 0 : factStep % FACTS.length
 
     return (
         <section className="hero spike-b">
@@ -45,7 +35,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
                         className="hero-eyebrow"
                     >
-                        Computer Science @ Purdue 26
+                        Purdue Computer Science Graduate · May 2026
                     </motion.p>
 
                     <motion.h1
@@ -63,7 +53,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.24 }}
                         className="hero-tagline"
                     >
-                        Software Engineer building full-stack with AI applications.
+                        Full-stack software engineer building real-time and AI-enabled products.
                     </motion.p>
 
                     <motion.p
@@ -72,7 +62,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         className="hero-tagline-2"
                     >
-                        My work spans web application development, data visualization research, machine learning, and human-centered interfaces.
+                        I develop reliable web applications across frontend, backend, and applied machine learning, with an emphasis on clear, human-centered experiences.
                     </motion.p>
 
                     <motion.div
@@ -81,10 +71,14 @@ export function HeroLanding() {
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.32 }}
                         className="hero-btns"
                     >
-                        <Link href="/about" className="btn hero-btn">
-                            About me
+                        <Link href="/work" className="btn hero-btn">
+                            View selected work
                             <ArrowRight aria-hidden="true" />
                         </Link>
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn hero-btn">
+                            Download résumé
+                            <Download aria-hidden="true" />
+                        </a>
                     </motion.div>
                 </div>
 
@@ -121,8 +115,8 @@ export function HeroLanding() {
                                     style={{ position: "absolute", inset: 0 }}
                                 >
                                     <FactReadout
-                                        text={FACTS[factIndex]}
-                                        label={`fact ${String(factIndex + 1).padStart(2, "0")} / ${String(FACTS.length).padStart(2, "0")}`}
+                                        text={CONWAY_FACT}
+                                        label="Conway glider"
                                     />
                                 </motion.div>
                             )}
@@ -135,7 +129,7 @@ export function HeroLanding() {
                                 type="button"
                                 className="hero-card-hit"
                                 onClick={() => setFactStep((s) => (s === null ? 0 : s + 1))}
-                                aria-label={factStep === null ? "Show a fact about this page" : "Show the next fact"}
+                                aria-label={factStep === null ? "Show the Conway glider fact" : "Replay the Conway glider fact"}
                             />
                         </div>
                     </div>
