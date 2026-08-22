@@ -141,47 +141,50 @@ export default function MoodleCaseStudyPage() {
           </div>
         </section>
 
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">The brief</div>
-          <h2>Make a familiar party game feel more physical.</h2>
-          <p>
-            Most drawing games treat the mouse as the only meaningful input. Moodle explores what changes when
-            gesture drawing, human and AI players, synchronized rooms, and no-account browser access all belong to
-            the same game loop.
-          </p>
+        <section className="moodle-case-chapter" aria-labelledby="moodle-brief">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">The brief</div>
+            <h2 id="moodle-brief">Make a familiar party game feel more physical.</h2>
+            <p>
+              Most drawing games treat the mouse as the only meaningful input. Moodle explores what changes when
+              gesture drawing, human and AI players, synchronized rooms, and no-account browser access all belong to
+              the same game loop.
+            </p>
+          </div>
+
+          <div className="moodle-case-pair moodle-case-pair-tall">
+            <figure className="moodle-case-figure">
+              <MoodleImage
+                src="/moodle-case-study/how-to-play.png"
+                alt="Moodle how-to-play instructions explaining scoring and hand mode"
+                width={886}
+                height={1198}
+                sizes="(max-width: 800px) 100vw, 50vw"
+              />
+            </figure>
+            <figure className="moodle-case-figure">
+              <MoodleImage
+                src="/moodle-case-study/instructions.png"
+                alt="Three-panel Moodle guide for gameplay, drawing controls, and hand-mode points"
+                width={1982}
+                height={1990}
+                sizes="(max-width: 800px) 100vw, 50vw"
+              />
+            </figure>
+          </div>
         </section>
 
-        <div className="moodle-case-pair moodle-case-pair-tall">
-          <figure className="moodle-case-figure">
-            <MoodleImage
-              src="/moodle-case-study/how-to-play.png"
-              alt="Moodle how-to-play instructions explaining scoring and hand mode"
-              width={886}
-              height={1198}
-              sizes="(max-width: 800px) 100vw, 50vw"
-            />
-          </figure>
-          <figure className="moodle-case-figure">
-            <MoodleImage
-              src="/moodle-case-study/instructions.png"
-              alt="Three-panel Moodle guide for gameplay, drawing controls, and hand-mode points"
-              width={1982}
-              height={1990}
-              sizes="(max-width: 800px) 100vw, 50vw"
-            />
-          </figure>
-        </div>
+        <section className="moodle-case-chapter moodle-case-onboarding" aria-labelledby="moodle-onboarding">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">Onboarding</div>
+            <h2 id="moodle-onboarding">From a character to a live room in a few clear decisions.</h2>
+            <p>
+              Players choose an identity, configure a room, invite others with a short code, or start instantly with
+              AI. Public and private rooms support up to eight people without requiring an account or installation.
+            </p>
+          </div>
 
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">Onboarding</div>
-          <h2>From a character to a live room in a few clear decisions.</h2>
-          <p>
-            Players choose an identity, configure a room, invite others with a short code, or start instantly with
-            AI. Public and private rooms support up to eight people without requiring an account or installation.
-          </p>
-        </section>
-
-        <div className="moodle-case-pair">
+          <div className="moodle-case-pair">
           <figure className="moodle-case-figure">
             <MoodleImage
               src="/moodle-case-study/characters.png"
@@ -200,9 +203,9 @@ export default function MoodleCaseStudyPage() {
               sizes="(max-width: 800px) 100vw, 50vw"
             />
           </figure>
-        </div>
+          </div>
 
-        <figure className="moodle-case-figure moodle-case-figure-wide">
+          <figure className="moodle-case-figure moodle-case-figure-wide">
           <MoodleImage
             src="/moodle-case-study/room-choice.png"
             alt="Moodle drawing room with create, join, and play-with-AI choices"
@@ -210,9 +213,9 @@ export default function MoodleCaseStudyPage() {
             height={1058}
             sizes="100vw"
           />
-        </figure>
+          </figure>
 
-        <div className="moodle-case-pair">
+          <div className="moodle-case-pair">
           <figure className="moodle-case-figure">
             <MoodleImage
               src="/moodle-case-study/lobby-human.png"
@@ -231,18 +234,20 @@ export default function MoodleCaseStudyPage() {
               sizes="(max-width: 800px) 100vw, 50vw"
             />
           </figure>
-        </div>
-
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">Real-time play</div>
-          <h2>One authoritative game, shared by every player.</h2>
-          <p>
-            The Node.js and Socket.IO server owns turns, timers, secret words, scores, chat, and room membership.
-            Every player receives the same validated state while the canvas streams compact stroke data in real time.
-          </p>
+          </div>
         </section>
 
-        <figure className="moodle-case-figure moodle-case-figure-full">
+        <section className="moodle-case-chapter" aria-labelledby="moodle-realtime">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">Real-time play</div>
+            <h2 id="moodle-realtime">One authoritative game, shared by every player.</h2>
+            <p>
+              The Node.js and Socket.IO server owns turns, timers, secret words, scores, chat, and room membership.
+              Every player receives the same validated state while the canvas streams compact stroke data in real time.
+            </p>
+          </div>
+
+          <figure className="moodle-case-figure moodle-case-figure-full">
           <MoodleImage
             src="/moodle-case-study/gameplay-wide.png"
             alt="Wide Moodle gameplay interface during a drawing round"
@@ -250,28 +255,30 @@ export default function MoodleCaseStudyPage() {
             height={1014}
             sizes="100vw"
           />
-        </figure>
+          </figure>
 
-        <div className="moodle-case-stats" aria-label="Verified Moodle project metrics">
+          <div className="moodle-case-stats" aria-label="Verified Moodle project metrics">
           {stats.map((stat) => (
             <div key={stat.label}>
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
             </div>
           ))}
-        </div>
-
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">Gesture drawing</div>
-          <h2>The canvas works with a mouse, touch, or a camera-tracked hand.</h2>
-          <p>
-            MediaPipe runs in the browser so camera frames stay on the player&apos;s device. Moodle calibrates pinch
-            distance, smooths hand landmarks, and translates stable gestures into strokes while keeping standard
-            drawing tools available as a reliable fallback.
-          </p>
+          </div>
         </section>
 
-        <figure className="moodle-case-figure moodle-case-figure-full moodle-case-figure-light">
+        <section className="moodle-case-chapter" aria-labelledby="moodle-gestures">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">Gesture drawing</div>
+            <h2 id="moodle-gestures">The canvas works with a mouse, touch, or a camera-tracked hand.</h2>
+            <p>
+              MediaPipe runs in the browser so camera frames stay on the player&apos;s device. Moodle calibrates pinch
+              distance, smooths hand landmarks, and translates stable gestures into strokes while keeping standard
+              drawing tools available as a reliable fallback.
+            </p>
+          </div>
+
+          <figure className="moodle-case-figure moodle-case-figure-full moodle-case-figure-light">
           <MoodleImage
             src="/moodle-case-study/drawing-toolbar.png"
             alt="Moodle drawing toolbar with color, paper, brush, save, replay, and theme controls"
@@ -279,18 +286,20 @@ export default function MoodleCaseStudyPage() {
             height={578}
             sizes="100vw"
           />
-        </figure>
-
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">AI players</div>
-          <h2>Solo play still runs the complete multiplayer loop.</h2>
-          <p>
-            Bots can join rooms, choose words, draw, guess, react, and vary their pacing. Provider integrations are
-            optional; local QuickDraw-derived fallbacks keep the public MVP playable without paid credentials.
-          </p>
+          </figure>
         </section>
 
-        <div className="moodle-case-pair">
+        <section className="moodle-case-chapter" aria-labelledby="moodle-ai">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">AI players</div>
+            <h2 id="moodle-ai">Solo play still runs the complete multiplayer loop.</h2>
+            <p>
+              Bots can join rooms, choose words, draw, guess, react, and vary their pacing. Provider integrations are
+              optional; local QuickDraw-derived fallbacks keep the public MVP playable without paid credentials.
+            </p>
+          </div>
+
+          <div className="moodle-case-pair">
           <figure className="moodle-case-figure">
             <MoodleImage
               src="/moodle-case-study/word-selection.png"
@@ -309,19 +318,21 @@ export default function MoodleCaseStudyPage() {
               sizes="(max-width: 800px) 100vw, 50vw"
             />
           </figure>
-        </div>
-
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">Interaction details</div>
-          <h2>Small states explain what the game is doing.</h2>
-          <p>
-            Connection, voice, timing, feedback, and scoring states use the same high-contrast pixel language. Clear
-            visual changes help players understand when a room is connected, a microphone is active, or a round has
-            ended.
-          </p>
+          </div>
         </section>
 
-        <div className="moodle-case-triptych">
+        <section className="moodle-case-chapter" aria-labelledby="moodle-details">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">Interaction details</div>
+            <h2 id="moodle-details">Small states explain what the game is doing.</h2>
+            <p>
+              Connection, voice, timing, feedback, and scoring states use the same high-contrast pixel language. Clear
+              visual changes help players understand when a room is connected, a microphone is active, or a round has
+              ended.
+            </p>
+          </div>
+
+          <div className="moodle-case-triptych">
           <figure className="moodle-case-figure">
             <MoodleImage src="/moodle-case-study/status-disabled.png" alt="Disabled Moodle voice control" width={848} height={202} sizes="33vw" />
           </figure>
@@ -331,9 +342,9 @@ export default function MoodleCaseStudyPage() {
           <figure className="moodle-case-figure">
             <MoodleImage src="/moodle-case-study/status-live.png" alt="Live Moodle voice state and leave control" width={1000} height={202} sizes="33vw" />
           </figure>
-        </div>
+          </div>
 
-        <div className="moodle-case-pair moodle-case-pair-contained">
+          <div className="moodle-case-pair moodle-case-pair-contained">
           <figure className="moodle-case-figure">
             <MoodleImage
               src="/moodle-case-study/feedback.png"
@@ -352,19 +363,21 @@ export default function MoodleCaseStudyPage() {
               sizes="(max-width: 800px) 100vw, 50vw"
             />
           </figure>
-        </div>
-
-        <section className="moodle-case-section moodle-case-copy">
-          <div className="moodle-case-kicker">Engineering</div>
-          <h2>The difficult part was keeping every system honest.</h2>
-          <p>
-            Gesture input is noisy, multiplayer state races, and an active canvas grows more expensive with every
-            stroke. The strongest technical decisions turn those failure modes into explicit state, validated events,
-            and measurable fallbacks.
-          </p>
+          </div>
         </section>
 
-        <div className="moodle-case-notes">
+        <section className="moodle-case-chapter" aria-labelledby="moodle-engineering">
+          <div className="moodle-case-section moodle-case-copy">
+            <div className="moodle-case-kicker">Engineering</div>
+            <h2 id="moodle-engineering">The difficult part was keeping every system honest.</h2>
+            <p>
+              Gesture input is noisy, multiplayer state races, and an active canvas grows more expensive with every
+              stroke. The strongest technical decisions turn those failure modes into explicit state, validated events,
+              and measurable fallbacks.
+            </p>
+          </div>
+
+          <div className="moodle-case-notes">
           {engineeringNotes.map((note) => (
             <article key={note.number}>
               <span>{note.number}</span>
@@ -372,7 +385,8 @@ export default function MoodleCaseStudyPage() {
               <p>{note.copy}</p>
             </article>
           ))}
-        </div>
+          </div>
+        </section>
 
         <section className="moodle-case-outro">
           <div className="moodle-case-copy">

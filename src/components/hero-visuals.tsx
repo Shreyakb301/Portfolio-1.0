@@ -1,21 +1,21 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 
 // Matches the first .hero-card-bars chrome dot, so the cells read as part of
 // the same window rather than something dropped into it.
 const OLIVE = "#3a4b1a"
 
 function usePrefersReducedMotion() {
-    const [reduced, setReduced] = useState(false)
-    useEffect(() => {
-        const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
-        setReduced(mq.matches)
-        const on = () => setReduced(mq.matches)
-        mq.addEventListener("change", on)
-        return () => mq.removeEventListener("change", on)
-    }, [])
-    return reduced
+    return useSyncExternalStore(
+        (onChange) => {
+            const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+            mq.addEventListener("change", onChange)
+            return () => mq.removeEventListener("change", onChange)
+        },
+        () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+        () => false,
+    )
 }
 
 // A glider: the smallest pattern that travels. Seeding with real Life patterns
@@ -158,11 +158,8 @@ export function FactReadout({ text, label }: { text: string; label: string }) {
     const reduced = usePrefersReducedMotion()
 
     useEffect(() => {
-        if (reduced) {
-            setShown(text.length)
-            return
-        }
-        setShown(0)
+        if (reduced) return
+
         const id = setInterval(() => {
             setShown((n) => {
                 if (n >= text.length) {
@@ -184,7 +181,7 @@ export function FactReadout({ text, label }: { text: string; label: string }) {
                 {!reduced && <span className="hero-scan" />}
                 <span className="hero-fact-label">{label}</span>
                 <p className="hero-fact-text">
-                    {text.slice(0, shown)}
+                    {text.slice(0, reduced ? text.length : shown)}
                     <span className="hero-fact-caret" />
                 </p>
             </div>

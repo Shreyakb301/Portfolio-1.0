@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { SiteHeader } from "@/components/site-header";
+// import { GitHubContributions } from "@/components/github-contributions";
 
 const timelineItems = [
   {
@@ -111,46 +112,7 @@ const skillColumns = [
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <header className="retro-nav">
-        <div className="about-wrap retro-nav-inner">
-          <Link href="/" className="nav-logo">
-            SKB_
-          </Link>
-
-          <ul className="nav-links">
-            <li>
-              <Link href="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/work" className="nav-link">
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="nav-link active">
-                About
-              </Link>
-            </li>
-            <li>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-resume">
-                Resume ↗
-              </a>
-            </li>
-          </ul>
-
-          <div className="about-nav-social">
-            <a href="https://github.com/Shreyakb301" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/shreya-komarabattini" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href="mailto:shreyakbinbox@gmail.com">Email</a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1">
         <section className="about-sec spike-b spike-t">
@@ -230,6 +192,18 @@ export default function AboutPage() {
         </section>
 
         <div className="section-spacer" style={{ background: "var(--background-2)" }} />
+
+        {/* GitHub contribution calendar temporarily hidden.
+        <section className="github-calendar-sec spike-b spike-t">
+          <div className="about-wrap">
+            <div className="sec-label">Open Source &amp; Projects</div>
+            <div className="spike-strip" />
+            <GitHubContributions />
+          </div>
+        </section>
+
+        <div className="section-spacer" style={{ background: "var(--background)" }} />
+        */}
 
         <section className="reading-sec spike-b spike-t">
           <div className="about-wrap">

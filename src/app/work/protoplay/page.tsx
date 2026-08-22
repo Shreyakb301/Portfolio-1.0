@@ -42,8 +42,8 @@ export default function ProtoPlayCaseStudyPage() {
 
           <ul className="nav-links">
             <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/work" className="nav-link active">Work</Link></li>
             <li><Link href="/about" className="nav-link">About</Link></li>
+            <li><Link href="/work" className="nav-link active">Playground</Link></li>
             <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-resume">Resume ↗</a></li>
           </ul>
 

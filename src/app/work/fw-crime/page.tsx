@@ -1,52 +1,43 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
-  title: "Fort Wayne Crime Data Analysis — Shreya Komarabattini",
+  title: "Fort Wayne Crime Patterns, 2023 — Shreya Komarabattini",
   description:
-    "A Python and geospatial analysis of more than 150,000 Fort Wayne crime records, with temporal trends, classification, and responsible-data caveats.",
+    "A playful data case study that filters 154,478 police activity records into 30,336 likely crime incidents and explores patterns across Fort Wayne.",
 };
 
-const metrics = [
-  { value: "150K+", label: "records explored" },
-  { value: "12", label: "months compared" },
-  { value: "2", label: "high-level classes" },
-  { value: "Python", label: "analysis workflow" },
+const categories = [
+  { label: "Property", value: 46.7, className: "property" },
+  { label: "Violent", value: 23.5, className: "violent" },
+  { label: "Vehicle-related", value: 11.4, className: "vehicle" },
+  { label: "Public-order", value: 10.4, className: "public" },
+  { label: "Drug / alcohol", value: 8, className: "drug" },
 ];
 
-const decisions = [
-  {
-    number: "01",
-    title: "Make the records consistent",
-    copy: "Clean dates, locations, and offense labels before grouping. The analysis treats missing or inconsistent fields as data-quality questions rather than silently filling them in.",
-  },
-  {
-    number: "02",
-    title: "Compare time and place",
-    copy: "Aggregate incidents by month to reveal temporal changes, then use mapped density to examine where records cluster without claiming that a hotspot explains why an event occurred.",
-  },
-  {
-    number: "03",
-    title: "Communicate the boundary",
-    copy: "Police records describe reported and recorded incidents. They do not measure every crime, personal risk, causation, or the character of a neighborhood.",
-  },
+const timeWindows = [
+  { time: "1–6 PM", label: "Vehicle-related peak", color: "yellow" },
+  { time: "7–10 PM", label: "Violent crime peak", color: "pink" },
+  { time: "10 PM–2 AM", label: "Drug / alcohol peak", color: "blue" },
+  { time: "Afternoon", label: "Strongest property window", color: "green" },
 ];
+
+const corridors = ["Coldwater Rd", "Lima Rd", "W Jefferson Blvd", "E Main St", "E Washington Blvd"];
 
 export default function FortWayneCrimeCaseStudyPage() {
   return (
-    <div className="ticket-case-page">
-      <header className="retro-nav">
+    <div className="fw-case-page">
+      <header className="retro-nav fw-case-nav">
         <div className="about-wrap retro-nav-inner">
           <Link href="/" className="nav-logo">SKB_</Link>
-
           <ul className="nav-links">
             <li><Link href="/" className="nav-link">Home</Link></li>
-            <li><Link href="/work" className="nav-link active">Work</Link></li>
             <li><Link href="/about" className="nav-link">About</Link></li>
+            <li><Link href="/work" className="nav-link active">Playground</Link></li>
             <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-resume">Resume ↗</a></li>
           </ul>
-
           <div className="about-nav-social">
             <a href="https://github.com/Shreyakb301" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/shreya-komarabattini" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -56,173 +47,181 @@ export default function FortWayneCrimeCaseStudyPage() {
       </header>
 
       <main>
-        <section className="ticket-case-hero" aria-label="Fort Wayne crime analysis project cover">
-          <div className="ticket-case-hero-panel">
-            <Image
-              src="/crime-hp.jpeg"
-              alt="Line chart of monthly incidents in the 2023 Fort Wayne project dataset"
-              width={989}
-              height={490}
-              priority
-              sizes="100vw"
-            />
-          </div>
-        </section>
-
-        <section className="ticket-case-intro ticket-case-copy">
-          <div className="ticket-case-kicker">Data analysis · Public safety · Fort Wayne, Indiana</div>
-          <h1>Turning 150,000+ incident records into a readable view of time and place.</h1>
-
-          <div className="ticket-case-meta">
-            <div>
-              <span>Overview</span>
-              <strong>A reproducible exploration of offense categories, monthly patterns, and geographic concentrations.</strong>
-            </div>
-            <div>
-              <span>Question</span>
-              <strong>What patterns become visible after incident records are cleaned, classified, and mapped?</strong>
-            </div>
-            <div>
-              <span>Stack</span>
-              <strong>Python · Pandas · Matplotlib · Geospatial visualization</strong>
-            </div>
-          </div>
-
-          <div className="ticket-case-actions">
-            <a
-              href="https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ticket-case-button primary"
-            >
-              View analysis on Kaggle ↗
-            </a>
-            <a
-              href="https://www.cityoffortwayne.in.gov/699/Crime-Stats"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ticket-case-button"
-            >
-              View FWPD crime statistics ↗
-            </a>
-          </div>
-        </section>
-
-        <section className="ticket-case-brief">
-          <div className="ticket-case-copy ticket-case-brief-grid">
-            <div>
-              <div className="ticket-case-kicker">The problem</div>
-              <h2>Raw activity records are detailed, but difficult to compare at city scale.</h2>
-            </div>
-            <p>
-              Individual records answer what was logged at a particular time and place. The project turns those rows
-              into broader views: monthly volume, violent and non-violent groupings, and mapped concentrations that
-              support exploration without reducing the city to a single crime-rate number.
+        <section className="fw-case-hero">
+          <div className="fw-case-hero-copy">
+            <p className="fw-case-eyebrow"><span>Case file 23-150K</span> Fort Wayne, Indiana</p>
+            <h1>Crime is<br /><em>patterned,</em><br />not random.</h1>
+            <p className="fw-case-deck">
+              A careful look at where, when, and how likely crime incidents appeared across Fort Wayne in 2023.
             </p>
-          </div>
-        </section>
-
-        <section className="ticket-case-flow" aria-label="Crime data analysis workflow">
-          <div><span>01</span><strong>Clean records</strong></div>
-          <div><span>02</span><strong>Classify offenses</strong></div>
-          <div><span>03</span><strong>Compare months</strong></div>
-          <div><span>04</span><strong>Map patterns</strong></div>
-        </section>
-
-        <section className="ticket-case-section ticket-case-copy">
-          <div className="ticket-case-kicker">Temporal analysis</div>
-          <h2>The 2023 dataset changes through the year rather than following one steady baseline.</h2>
-          <p>
-            Monthly aggregation makes the project easier to inspect than a table of individual events. The chart shows
-            higher recorded volume around late spring and midsummer and lower volume near the beginning and end of the
-            year. These are descriptive patterns inside the analyzed dataset—not proof of seasonality or causation.
-          </p>
-        </section>
-
-        <figure className="ticket-case-figure ticket-case-figure-wide">
-          <Image
-            src="/crime-hp.jpeg"
-            alt="Monthly incident counts plotted across 2023"
-            width={989}
-            height={490}
-            sizes="100vw"
-          />
-        </figure>
-
-        <div className="ticket-case-metrics" aria-label="Fort Wayne crime analysis project metrics">
-          {metrics.map((metric) => (
-            <div key={metric.label}>
-              <span>{metric.label}</span>
-              <strong>{metric.value}</strong>
+            <div className="fw-case-actions">
+              <a href="https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023" target="_blank" rel="noopener noreferrer">Open the notebook ↗</a>
+              <a href="https://app.notion.com/p/325ec7c005ac8031b78bf99048b4c015" target="_blank" rel="noopener noreferrer">Read the report ↗</a>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <section className="ticket-case-section ticket-case-copy">
-          <div className="ticket-case-kicker">Research context</div>
-          <h2>Local, state, and federal sources answer different questions.</h2>
-          <p>
-            Fort Wayne publishes recurring police crime-statistics reports for local monitoring. Indiana participates
-            in statewide NIBRS reporting, which captures incident-level details under a standardized framework. The FBI
-            Crime Data Explorer provides the wider UCR context, but comparisons still depend on agency participation,
-            reporting practices, definitions, and coverage.
-          </p>
-          <div className="ticket-case-actions">
-            <a href="https://www.cityoffortwayne.in.gov/699/Crime-Stats" target="_blank" rel="noopener noreferrer" className="ticket-case-button">
-              Fort Wayne crime stats ↗
-            </a>
-            <a href="https://www.in.gov/isp/nibrs/statewide-crime-statistics/" target="_blank" rel="noopener noreferrer" className="ticket-case-button">
-              Indiana NIBRS ↗
-            </a>
-            <a href="https://cde.ucr.cjis.gov/" target="_blank" rel="noopener noreferrer" className="ticket-case-button">
-              FBI Crime Data Explorer ↗
-            </a>
+          <div className="fw-case-hero-board" aria-label="Key project findings">
+            <div className="fw-case-pin pin-one" />
+            <div className="fw-case-pin pin-two" />
+            <p className="fw-case-board-label">Evidence board / 2023</p>
+            <div className="fw-case-board-stat big"><strong>30,336</strong><span>likely crime incidents</span></div>
+            <div className="fw-case-board-note note-a">Only <strong>1 in 5</strong> raw entries made the crime-focused cut.</div>
+            <div className="fw-case-board-note note-b"><strong>46.7%</strong><br />property crime</div>
+            <div className="fw-case-board-stamp">Validity<br />over volume</div>
+            <svg className="fw-case-thread" viewBox="0 0 500 420" aria-hidden="true">
+              <path d="M92 104 C180 72 174 232 302 218 S396 312 420 342" />
+              <path d="M166 314 C238 298 288 246 366 106" />
+            </svg>
           </div>
         </section>
 
-        <div className="ticket-case-decisions">
-          {decisions.map((decision) => (
-            <article key={decision.number}>
-              <span>{decision.number}</span>
-              <h3>{decision.title}</h3>
-              <p>{decision.copy}</p>
-            </article>
-          ))}
-        </div>
-
-        <section className="ticket-case-outcome">
-          <div className="ticket-case-copy">
-            <div className="ticket-case-kicker">Outcome</div>
-            <h2>A portfolio analysis that makes patterns visible without overstating what the records prove.</h2>
+        <section className="fw-case-intro fw-case-shell">
+          <div>
+            <p className="fw-case-section-tag">01 / The assignment</p>
+            <h2>The raw file was a police activity log—not a crime database.</h2>
+          </div>
+          <div className="fw-case-intro-copy">
             <p>
-              The finished workflow connects cleaning, classification, aggregation, and mapping. It demonstrates how
-              public-safety records can support transparent exploration while keeping reporting limitations visible to
-              the reader.
+              Traffic stops, alarms, welfare checks, EMS calls, follow-ups, and citizen assists lived beside offense records. Summarizing everything would tell the wrong story, so the first task was deciding what belonged in a defensible crime-focused dataset.
             </p>
-            <div className="ticket-case-actions">
-              <a
-                href="https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ticket-case-button primary"
-              >
-                Explore the notebook ↗
-              </a>
+            <dl>
+              <div><dt>Role</dt><dd>Data analysis &amp; visualization</dd></div>
+              <div><dt>Tools</dt><dd>Python, Pandas, Matplotlib</dd></div>
+              <div><dt>Focus</dt><dd>Time, category &amp; location patterns</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section className="fw-case-filter">
+          <div className="fw-case-shell">
+            <p className="fw-case-section-tag light">02 / Build the evidence</p>
+            <h2>154,478 rows entered.<br />30,336 incidents remained.</h2>
+            <div className="fw-case-funnel" aria-label="Dataset filtering process">
+              <article><span>Source log</span><strong>154,478</strong><small>all 2023 police activity rows</small></article>
+              <b aria-hidden="true">→</b>
+              <article><span>City filter</span><strong>152,095</strong><small>98.46% tagged Fort Wayne</small></article>
+              <b aria-hidden="true">→</b>
+              <article className="selected"><span>Crime filter</span><strong>30,336</strong><small>19.95% of the original log</small></article>
+            </div>
+            <p className="fw-case-filter-note">The conservative filter favored clear crime patterns—such as theft, assault, vandalism, OWI, and weapons—and excluded service calls.</p>
+          </div>
+        </section>
+
+        <section className="fw-case-categories fw-case-shell">
+          <div className="fw-case-category-copy">
+            <p className="fw-case-section-tag">03 / What happened</p>
+            <h2>Property crime takes up nearly half the board.</h2>
+            <p>
+              Hit-and-run looks like the largest single offense at first glance. Combine theft-related labels, however, and property loss and damage become the dominant volume story.
+            </p>
+            <aside><strong>Key distinction</strong> High-volume crime is not the same thing as high-risk crime.</aside>
+          </div>
+          <div className="fw-case-bars" aria-label="Crime categories by share">
+            {categories.map((category) => (
+              <div className={`fw-case-bar ${category.className}`} key={category.label}>
+                <div><span>{category.label}</span><strong>{category.value}%</strong></div>
+                <i style={{ "--bar-size": `${category.value}%` } as CSSProperties} />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="fw-case-timing">
+          <div className="fw-case-shell">
+            <p className="fw-case-section-tag">04 / When it happens</p>
+            <div className="fw-case-timing-head">
+              <h2>Summer gets louder.<br />Weekends do too.</h2>
+              <p>July averaged <strong>93.55 incidents per day</strong>, the highest month. Friday through Sunday accounted for <strong>44.8%</strong> of all likely crime incidents.</p>
+            </div>
+            <div className="fw-case-time-cards">
+              {timeWindows.map((window) => (
+                <article className={window.color} key={window.label}>
+                  <span>{window.time}</span><p>{window.label}</p>
+                </article>
+              ))}
+            </div>
+            <div className="fw-case-midnight-note"><span>!</span><p><strong>Midnight is a mirage.</strong> It appears as the most common hour largely because of a data-entry artifact, not a real behavioral peak.</p></div>
+          </div>
+        </section>
+
+        <section className="fw-case-map fw-case-shell">
+          <div className="fw-case-map-visual" aria-label="Stylized map showing concentrated crime corridors">
+            <div className="fw-map-road road-a" /><div className="fw-map-road road-b" /><div className="fw-map-road road-c" />
+            <span className="hotspot h1" /><span className="hotspot h2" /><span className="hotspot h3" /><span className="hotspot h4" /><span className="hotspot h5" />
+            <p>Fort Wayne<br /><strong>hotspot sketch</strong></p>
+          </div>
+          <div className="fw-case-map-copy">
+            <p className="fw-case-section-tag">05 / Where it clusters</p>
+            <h2>Commercial corridors create opportunity—and volume.</h2>
+            <p>The top 10 areas produced <strong>28.1%</strong> of all likely crime incidents, while the top 10 corridors accounted for <strong>15.4%</strong>.</p>
+            <ol>
+              {corridors.map((corridor, index) => <li key={corridor}><span>{String(index + 1).padStart(2, "0")}</span>{corridor}</li>)}
+            </ol>
+            <p className="fw-case-map-caveat">High-volume areas were not automatically high-violence areas. Some lower-volume corridors had twice the city-average violent share.</p>
+          </div>
+        </section>
+
+        <section className="fw-case-reporting">
+          <div className="fw-case-shell">
+            <p className="fw-case-section-tag light">06 / Read the clock carefully</p>
+            <h2>Reporting lag changes what “time of crime” really means.</h2>
+            <div className="fw-case-report-cards">
+              <article><strong>62.4%</strong><span>Property crime reported within 1 hour</span><small>6.9% arrived 7+ days later</small></article>
+              <article><strong>93.6%</strong><span>Violent crime reported within 1 hour</span><small>Timing is substantially more reliable</small></article>
+              <article><strong>99.5%</strong><span>Drug / alcohol incidents immediate</span><small>The most time-precise category</small></article>
             </div>
           </div>
         </section>
 
-        <nav className="ticket-case-project-nav" aria-label="Previous and next project">
-          <Link href="/work/it-ticket"><span>←</span> IT Ticket Routing</Link>
-          <Link href="/work">All work <span>→</span></Link>
+        <section className="fw-case-chart fw-case-shell">
+          <div className="fw-case-chart-copy">
+            <p className="fw-case-section-tag">07 / The starting point</p>
+            <h2>Plot first. Question the plot second.</h2>
+            <p>This early view charted every activity record in the source log. It helped reveal the annual rhythm—but also exposed why a crime-specific filter was essential before interpreting the pattern.</p>
+          </div>
+          <figure>
+            <Image src="/crime-hp.jpeg" alt="Early line chart showing all police activity records by month in 2023" width={989} height={490} sizes="(max-width: 800px) 100vw, 60vw" />
+            <figcaption>Early exploration · all activity records, before the conservative crime filter</figcaption>
+          </figure>
+        </section>
+
+        <section className="fw-case-anomaly">
+          <div className="fw-case-shell">
+            <div className="fw-case-anomaly-date"><span>JAN</span><strong>01</strong><small>135 incidents</small></div>
+            <div><p className="fw-case-section-tag light">Anomaly detected</p><h2>New Year&apos;s Day was the largest spike.</h2><p>It included 45 violent incidents and 24 shots-fired records. Other multi-category surges appeared on June 24, July 14 during the Three Rivers Festival, September 29, and November 5.</p></div>
+          </div>
+        </section>
+
+        <section className="fw-case-limitations fw-case-shell">
+          <p className="fw-case-section-tag">08 / Handle with care</p>
+          <h2>This analysis describes records—not every crime, cause, or neighborhood.</h2>
+          <div>
+            <p>No latitude/longitude or population context</p>
+            <p>Broad occurrence windows reduce precision</p>
+            <p>Some offense labels remain ambiguous</p>
+            <p>Incident logs are not confirmed-crime tables</p>
+          </div>
+        </section>
+
+        <section className="fw-case-outcome">
+          <div className="fw-case-shell">
+            <p className="fw-case-section-tag light">Case closed / for now</p>
+            <h2>Property crime follows opportunity.<br />Violent crime follows specific places and times.</h2>
+            <p>The useful result is not one citywide number. It is a more honest map of routine activity, reporting behavior, seasonal pressure, and localized risk.</p>
+            <div className="fw-case-actions inverse">
+              <a href="https://www.kaggle.com/code/shreyakb/crime-data-analysis-fort-wayne-2023" target="_blank" rel="noopener noreferrer">Explore the notebook ↗</a>
+              <Link href="/work">Back to all work →</Link>
+            </div>
+          </div>
+        </section>
+
+        <nav className="fw-case-project-nav" aria-label="Previous and next project">
+          <Link href="/work/it-ticket">← IT Ticket Routing</Link>
+          <Link href="/work">All work →</Link>
         </nav>
       </main>
 
-      <footer className="ticket-case-footer">
-        <div className="about-wrap site-footer site-footer-centered">
-          <span className="foot-copy">Shreya Komarabattini</span>
-        </div>
-      </footer>
+      <footer className="fw-case-footer"><span>Shreya Komarabattini</span><span>Data case study · 2023</span></footer>
     </div>
   );
 }

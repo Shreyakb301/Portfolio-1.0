@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Share_Tech_Mono, VT323 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script";
+import { AnalyticsTracker } from "@/components/analytics-tracker";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -52,11 +53,13 @@ export default function RootLayout({
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            if (['shreyakb.com', 'www.shreyakb.com'].includes(window.location.hostname.toLowerCase())) {
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = function(){window.dataLayer.push(arguments);};
+              window.gtag('js', new Date());
 
-            gtag('config', 'G-LKK0ZHCNC5');
+              window.gtag('config', 'G-LKK0ZHCNC5');
+            }
           `}
         </Script>
       </head>
@@ -64,6 +67,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${shareTechMono.variable} ${vt323.variable} font-sans antialiased selection:bg-primary selection:text-primary-foreground`}
       >
         {children}
+        <AnalyticsTracker />
         <Analytics />
       </body>
     </html>
