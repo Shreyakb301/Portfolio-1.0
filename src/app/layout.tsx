@@ -24,8 +24,30 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Shreya Komarabattini - Portfolio",
-  description: "Computer Science Student and Developer",
+  metadataBase: new URL("https://shreyakb.com"),
+  title: "Shreya Komarabattini | Full-Stack + AI Software Engineer",
+  description:
+    "Portfolio of Shreya Komarabattini, a Purdue Computer Science graduate building full-stack, real-time, and AI-enabled products.",
+  keywords: [
+    "Shreya Komarabattini",
+    "software engineer",
+    "full-stack engineer",
+    "AI engineer",
+    "Purdue Computer Science",
+    "Next.js",
+    "React",
+    "Python",
+  ],
+  authors: [{ name: "Shreya Komarabattini", url: "https://shreyakb.com" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "https://shreyakb.com",
+    title: "Shreya Komarabattini | Full-Stack + AI Software Engineer",
+    description:
+      "Purdue Computer Science graduate building full-stack, real-time, and AI-enabled products.",
+    siteName: "Shreya Komarabattini",
+  },
 };
 
 export const viewport: Viewport = {

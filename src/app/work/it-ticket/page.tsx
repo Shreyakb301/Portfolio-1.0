@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 
 export const metadata: Metadata = {
-  title: "IT Ticket Routing Automation — Shreya Komarabattini",
+  title: "IT Ticket Routing Automation | Shreya Komarabattini",
   description:
     "An NLP-powered system that classifies helpdesk tickets and recommends the right IT support group, issue type, and priority.",
 };

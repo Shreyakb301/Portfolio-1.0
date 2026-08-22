@@ -8,12 +8,13 @@ import { FlowerSprite, WatcherSprite } from "@/components/pixel-sprites";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-clip bg-background">
+    <>
       <SiteHeader />
 
-      <main className="z-10 flex-1">
-        <HeroLanding />
-        <ProjectShowcase />
+      <div className="home-page relative flex min-h-screen flex-col overflow-x-clip bg-background md:min-h-[125vh] md:[zoom:0.8]">
+        <main className="z-10 flex-1">
+          <HeroLanding />
+          <ProjectShowcase />
 
         <section className="about-cta-sec">
           <div className="container">
@@ -87,18 +88,19 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
 
-      <footer className="relative spike-sm-t overflow-hidden bg-background">
-        <div className="container site-footer site-footer-centered relative">
-          {/* Flower on left side of footer */}
-          <FlowerSprite className="animate-flower-nod hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
+        <footer className="relative spike-sm-t overflow-hidden bg-background">
+          <div className="container site-footer site-footer-centered relative">
+            {/* Flower on left side of footer */}
+            <FlowerSprite className="animate-flower-nod hidden lg:block" style={{ bottom: 0, left: '220px', transformOrigin: 'bottom center' }} />
 
-          <p className="foot-copy">
-            Shreya Komarabattini
-          </p>
-        </div>
-      </footer>
-    </div>
+            <p className="foot-copy">
+              Shreya Komarabattini
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }

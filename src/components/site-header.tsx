@@ -18,7 +18,7 @@ export function SiteHeader() {
     return (
         <header className="retro-nav">
             <div className="about-wrap retro-nav-inner">
-                <Link href="/" className="nav-logo" aria-label="Shreya Komarabattini — home">
+                <Link href="/" className="nav-logo" aria-label="Shreya Komarabattini, home">
                     SKB_
                 </Link>
 

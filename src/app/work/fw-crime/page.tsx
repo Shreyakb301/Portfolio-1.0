@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
-  title: "Fort Wayne Crime Patterns, 2023 — Shreya Komarabattini",
+  title: "Fort Wayne Crime Patterns, 2023 | Shreya Komarabattini",
   description:
     "A playful data case study that filters 154,478 police activity records into 30,336 likely crime incidents and explores patterns across Fort Wayne.",
 };
@@ -78,7 +78,7 @@ export default function FortWayneCrimeCaseStudyPage() {
         <section className="fw-case-intro fw-case-shell">
           <div>
             <p className="fw-case-section-tag">01 / The assignment</p>
-            <h2>The raw file was a police activity log—not a crime database.</h2>
+            <h2>The raw file was a police activity log, not a crime database.</h2>
           </div>
           <div className="fw-case-intro-copy">
             <p>
@@ -103,7 +103,7 @@ export default function FortWayneCrimeCaseStudyPage() {
               <b aria-hidden="true">→</b>
               <article className="selected"><span>Crime filter</span><strong>30,336</strong><small>19.95% of the original log</small></article>
             </div>
-            <p className="fw-case-filter-note">The conservative filter favored clear crime patterns—such as theft, assault, vandalism, OWI, and weapons—and excluded service calls.</p>
+            <p className="fw-case-filter-note">The conservative filter favored clear crime patterns, such as theft, assault, vandalism, OWI, and weapons, and excluded service calls.</p>
           </div>
         </section>
 
@@ -152,7 +152,7 @@ export default function FortWayneCrimeCaseStudyPage() {
           </div>
           <div className="fw-case-map-copy">
             <p className="fw-case-section-tag">05 / Where it clusters</p>
-            <h2>Commercial corridors create opportunity—and volume.</h2>
+            <h2>Commercial corridors create opportunity and volume.</h2>
             <p>The top 10 areas produced <strong>28.1%</strong> of all likely crime incidents, while the top 10 corridors accounted for <strong>15.4%</strong>.</p>
             <ol>
               {corridors.map((corridor, index) => <li key={corridor}><span>{String(index + 1).padStart(2, "0")}</span>{corridor}</li>)}
@@ -177,7 +177,7 @@ export default function FortWayneCrimeCaseStudyPage() {
           <div className="fw-case-chart-copy">
             <p className="fw-case-section-tag">07 / The starting point</p>
             <h2>Plot first. Question the plot second.</h2>
-            <p>This early view charted every activity record in the source log. It helped reveal the annual rhythm—but also exposed why a crime-specific filter was essential before interpreting the pattern.</p>
+            <p>This early view charted every activity record in the source log. It helped reveal the annual rhythm but also exposed why a crime-specific filter was essential before interpreting the pattern.</p>
           </div>
           <figure>
             <Image src="/crime-hp.jpeg" alt="Early line chart showing all police activity records by month in 2023" width={989} height={490} sizes="(max-width: 800px) 100vw, 60vw" />
@@ -194,7 +194,7 @@ export default function FortWayneCrimeCaseStudyPage() {
 
         <section className="fw-case-limitations fw-case-shell">
           <p className="fw-case-section-tag">08 / Handle with care</p>
-          <h2>This analysis describes records—not every crime, cause, or neighborhood.</h2>
+          <h2>This analysis describes records, not every crime, cause, or neighborhood.</h2>
           <div>
             <p>No latitude/longitude or population context</p>
             <p>Broad occurrence windows reduce precision</p>

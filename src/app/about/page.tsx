@@ -49,7 +49,7 @@ const timelineItems = [
   },
   {
     date: "2025",
-    title: "Teaching Assistant — Senior Capstone Project",
+    title: "Teaching Assistant, Senior Capstone Project",
     org: "Purdue University",
     bullets: [
       "Assisted in evaluating capstone project reports and presentations.",
@@ -111,10 +111,11 @@ const skillColumns = [
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <>
       <SiteHeader />
 
-      <main className="flex-1">
+      <div className="flex min-h-screen flex-col bg-background md:min-h-[125vh] md:[zoom:0.8]">
+        <main className="flex-1">
         <section className="about-sec spike-b spike-t">
           <div className="about-wrap">
             <div className="sec-label">Bio & Experience</div>
@@ -128,16 +129,16 @@ export default function AboutPage() {
                   aria-label="Shreya Komarabattini"
                 />
                 <p className="about-p">
-                  I&apos;m a recent Computer Science graduate from Purdue University May 2026, with hands-on experience building software, working with data, and exploring areas like NLP and AI through projects and research .
+                  I&apos;m a Purdue University Computer Science graduate who builds full-stack and AI-enabled products from concept to deployment.
                 </p>
                 <p className="about-p">
-                  I&apos;ve worked across backend systems, interactive web applications, and data-driven projects, along with work on how models process and interpret language.
+                  My work spans real-time web applications, backend systems, NLP automation, applied machine learning, and data visualization research.
                 </p>
                 <p className="about-p">
-                  Interested in problems where clarity is hard, building systems that are not just functional, but genuinely understandable to the people using them. This shows up in interface design, data visualization research, and NLP-related work.
+                  I&apos;m drawn to problems where the technology is complex but the experience should feel simple. That principle shapes how I design interfaces, explain data, and build dependable systems for real users.
                 </p>
                 <p className="about-p">
-                  Currently seeking internship or new grad roles to apply skills, continue learning, and contribute to meaningful systems.
+                  I&apos;m seeking full-time software engineering roles where I can contribute across the stack, learn quickly, and help ship products with measurable impact.
                 </p>
                 <div className="about-skills-divider" aria-hidden="true" />
 
@@ -253,13 +254,14 @@ export default function AboutPage() {
         </section>
 
         <div className="section-spacer" style={{ background: "var(--background)" }} />
-      </main>
+        </main>
 
-      <footer className="spike-sm-t bg-background">
-        <div className="about-wrap site-footer site-footer-centered">
-          <span className="foot-copy">Shreya Komarabattini</span>
-        </div>
-      </footer>
-    </div>
+        <footer className="spike-sm-t bg-background">
+          <div className="about-wrap site-footer site-footer-centered">
+            <span className="foot-copy">Shreya Komarabattini</span>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }

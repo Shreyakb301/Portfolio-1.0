@@ -860,7 +860,7 @@
 
 @media (min-width: 861px) {
   .retro-nav {
-    padding: calc(0.95rem + env(safe-area-inset-top)) 0 0.95rem;
+    padding: calc(1.25rem + env(safe-area-inset-top)) 0 1.25rem;
   }
 }
 
@@ -1745,7 +1745,7 @@
 .work-card-link {
   display: flex;
   min-height: 26rem;
-  height: 100%;
+  height: auto;
   flex-direction: column;
   padding: clamp(1.5rem, 2.5vw, 2.25rem);
   color: inherit;

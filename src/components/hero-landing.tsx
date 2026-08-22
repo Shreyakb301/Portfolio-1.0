@@ -7,16 +7,14 @@ import { ArrowRight, Download } from "lucide-react"
 import { RobotSprite } from "./pixel-sprites"
 import { LifeGrid, FactReadout } from "./hero-visuals"
 
-const CONWAY_FACT =
-    "The shape drifting in this window is a Conway glider. Five cells that fly off one edge and come back on the other."
+const CONWAY_MESSAGE =
+    "This is a Conway glider: five cells following simple rules to create a moving pattern."
 
 export function HeroLanding() {
-    // null = card shows only the glider. Counts up so another click can replay
-    // the same Conway fact and its typing animation.
-    const [factStep, setFactStep] = useState<number | null>(null)
+    const [showConwayMessage, setShowConwayMessage] = useState(false)
 
     return (
-        <section className="hero spike-b">
+        <section className="hero spike-b md:[zoom:1.1]">
             <div className="container hero-grid">
                 <div className="hero-content">
                     <motion.div
@@ -26,7 +24,7 @@ export function HeroLanding() {
                         className="available-badge"
                     >
                         <span className="available-dot" />
-                        Open to work
+                        Seeking full-time software engineering roles
                     </motion.div>
 
                     <motion.p
@@ -35,7 +33,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
                         className="hero-eyebrow"
                     >
-                        Purdue Computer Science Graduate · May 2026
+                        Purdue Computer Science · New Grad · May 2026
                     </motion.p>
 
                     <motion.h1
@@ -53,7 +51,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.24 }}
                         className="hero-tagline"
                     >
-                        Full-stack software engineer building real-time and AI-enabled products.
+                        Full-stack + AI software engineer turning complex systems into clear, useful products.
                     </motion.p>
 
                     <motion.p
@@ -62,17 +60,17 @@ export function HeroLanding() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         className="hero-tagline-2"
                     >
-                        I develop reliable web applications across frontend, backend, and applied machine learning, with an emphasis on clear, human-centered experiences.
+                        I build across frontend, backend, and applied machine learning, from real-time multiplayer experiences to NLP automation and data-driven tools.
                     </motion.p>
 
                     <motion.div
                         initial={{ opacity: 0, y: 14 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.55, ease: "easeOut", delay: 0.32 }}
+                        transition={{ duration: 0.55, ease: "easeOut", delay: 0.38 }}
                         className="hero-btns"
                     >
-                        <Link href="/work" className="btn hero-btn">
-                            View selected work
+                        <Link href="/work#case-studies" className="btn hero-btn">
+                            Explore case studies
                             <ArrowRight aria-hidden="true" />
                         </Link>
                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn hero-btn">
@@ -106,30 +104,29 @@ export function HeroLanding() {
                                 <LifeGrid cell={17} interval={450} />
                             </motion.div>
 
-                            {factStep !== null && (
+                            {showConwayMessage && (
                                 <motion.div
-                                    key={factStep}
                                     initial={{ opacity: 0, y: 8 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.28, ease: "easeOut" }}
                                     style={{ position: "absolute", inset: 0 }}
                                 >
                                     <FactReadout
-                                        text={CONWAY_FACT}
-                                        label="Conway glider"
+                                        text={CONWAY_MESSAGE}
+                                        label="Conway's Game of Life"
                                     />
                                 </motion.div>
                             )}
 
                             {/* Covers the whole card so the grid itself is the
                                 control. A real button, so it's keyboard
-                                reachable — which is why .hero-deco is no longer
+                                reachable, which is why .hero-deco is no longer
                                 aria-hidden. */}
                             <button
                                 type="button"
                                 className="hero-card-hit"
-                                onClick={() => setFactStep((s) => (s === null ? 0 : s + 1))}
-                                aria-label={factStep === null ? "Show the Conway glider fact" : "Replay the Conway glider fact"}
+                                onClick={() => setShowConwayMessage((visible) => !visible)}
+                                aria-label={showConwayMessage ? "Return to animated Conway visual" : "Learn about Conway's Game of Life"}
                             />
                         </div>
                     </div>

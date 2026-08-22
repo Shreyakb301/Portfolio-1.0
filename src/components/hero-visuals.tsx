@@ -19,7 +19,7 @@ function usePrefersReducedMotion() {
 }
 
 // A glider: the smallest pattern that travels. Seeding with real Life patterns
-// instead of random noise keeps the population tiny without going extinct —
+// instead of random noise keeps the population tiny without going extinct,
 // random sparse fields collapse to nothing within a few generations.
 const GLIDER = [
     [0, 1, 0],

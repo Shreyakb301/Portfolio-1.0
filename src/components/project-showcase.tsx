@@ -232,7 +232,7 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
             year: "2025",
             title: "HealthyCal",
             caption: "A full-stack nutrition and daily goal tracker.",
-            description: "Full-stack nutrition tracker — React frontend, Node/Express API, MongoDB storage. Helps users stay aware of how different foods contribute to daily energy and nutrient goals.",
+            description: "Full-stack nutrition tracker with a React frontend, Node/Express API, and MongoDB storage. Helps users stay aware of how different foods contribute to daily energy and nutrient goals.",
             image: "/healthycal-hp.png",
             video: "/healthycal-demo.mp4",
             link: "https://healthy-cal.vercel.app",
@@ -367,6 +367,7 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                         target={opensInNewTab ? "_blank" : undefined}
                         rel={opensInNewTab ? "noopener noreferrer" : undefined}
                         className="work-card-link"
+                        style={isLab ? { height: "auto" } : undefined}
                         aria-label={`View ${project.title}`}
                     >
                         <div className="work-card-media">

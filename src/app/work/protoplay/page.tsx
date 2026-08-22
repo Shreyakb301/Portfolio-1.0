@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 
 export const metadata: Metadata = {
-  title: "ProtoPlay — Shreya Komarabattini",
+  title: "ProtoPlay | Shreya Komarabattini",
   description:
     "An interactive learning platform for practicing system design, data structures, and programming-language concepts visually.",
 };

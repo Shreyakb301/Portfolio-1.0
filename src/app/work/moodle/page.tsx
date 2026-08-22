@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 
 export const metadata: Metadata = {
-  title: "Moodle — Shreya Komarabattini",
+  title: "Moodle | Shreya Komarabattini",
   description: "A real-time drawing and guessing game with multiplayer rooms, AI opponents, and hand-gesture drawing.",
 };
 

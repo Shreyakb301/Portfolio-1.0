@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Graph Visualization for Non-Experts — Shreya Komarabattini",
+  title: "Graph Visualization for Non-Experts | Shreya Komarabattini",
   description:
     "A research case study exploring how chart choice, scale, orientation, and data volume affect categorical-data interpretation.",
 };
 
 const findings = [
-  { number: "01", title: "Chart form creates meaning", copy: "A line connecting categorical values can imply order, continuity, or progression—even when none exists." },
+  { number: "01", title: "Chart form creates meaning", copy: "A line connecting categorical values can imply order, continuity, or progression, even when none exists." },
   { number: "02", title: "Totals and proportions answer different questions", copy: "A stacked chart preserves magnitude; a 100% stacked chart makes composition easier to compare. Important work may require both." },
   { number: "03", title: "Category count changes the answer", copy: "A grouped bar works well with a few categories, but becomes visually overwhelming as the number of bars grows." },
   { number: "04", title: "Layout is analytical, not cosmetic", copy: "Axis direction, category order, color range, labels, and scale can decide whether a pattern is readable or misleading." },
@@ -65,7 +65,7 @@ export default function VisualizationStudyPage() {
             <h2>A graph can be technically correct and still lead a reader toward the wrong conclusion.</h2>
           </div>
           <div className="viz-case-overview-copy">
-            <p>Data visualization shapes decisions, but non-experts are often given charts chosen by habit rather than by the question being asked. Categorical data makes this especially visible: the same values can appear as a line, grouped bars, stacked totals, or normalized proportions—and each form changes what the eye notices first.</p>
+            <p>Data visualization shapes decisions, but non-experts are often given charts chosen by habit rather than by the question being asked. Categorical data makes this especially visible: the same values can appear as a line, grouped bars, stacked totals, or normalized proportions, and each form changes what the eye notices first.</p>
             <dl>
             <div><dt>Advisor</dt><dd>Dr. Beomjin Kim</dd></div>
             <div><dt>Institution</dt><dd>Purdue University</dd></div>
@@ -83,7 +83,7 @@ export default function VisualizationStudyPage() {
             </div>
             <div className="viz-data-definition" aria-label="Definitions for the poster dataset">
               <article><span>Categories</span><strong>Disease type</strong><p>11 categories, including cardiovascular, digestive, endocrine, oncology, and respiratory conditions.</p></article>
-              <article><span>Groups</span><strong>Gender</strong><p>Three groups—female, male, and other—compared within every disease type.</p></article>
+              <article><span>Groups</span><strong>Gender</strong><p>Three groups (female, male, and other) compared within every disease type.</p></article>
               <article><span>Measure</span><strong>Patient count</strong><p>The number of patients represented by each disease-and-gender combination.</p></article>
             </div>
             <div className="viz-data-path">
@@ -144,7 +144,7 @@ export default function VisualizationStudyPage() {
             <p className="viz-case-kicker">05 / Decision two · Orientation</p>
             <h2>Then arrange the chart around the larger set of categories.</h2>
             <p>The poster tests two grouped-bar arrangements. Grouping many disease bars beneath only three gender labels creates dense clusters. Giving each disease type its own position creates smaller, repeatable three-bar groups and makes the labels easier to scan.</p>
-            <aside><strong>Choice:</strong> Place disease type—the larger category set—along the primary reading axis, then compare the three gender bars within each disease.</aside>
+            <aside><strong>Choice:</strong> Place disease type, the larger category set, along the primary reading axis, then compare the three gender bars within each disease.</aside>
           </div>
           <div className="viz-orientation-figures">
             <figure><div className="viz-orientation-bars crowded" aria-hidden="true">{Array.from({ length: 18 }, (_, index) => <i key={index} />)}</div><figcaption><span>Harder to scan</span> Many disease bars packed into three gender groups.</figcaption></figure>
@@ -198,7 +198,7 @@ export default function VisualizationStudyPage() {
         <section className="viz-case-outcome">
           <div className="viz-case-shell">
             <p className="viz-case-kicker light">The takeaway</p>
-            <h2>Choose the graph for the question—not because the software made it easy.</h2>
+            <h2>Choose the graph for the question, not because the software made it easy.</h2>
             <p>Good visualization is not decoration after analysis. The chart type, scale, axis, order, and companion views are part of the analytical argument itself.</p>
             <div className="viz-case-actions inverse"><a href="/resesarch_poster.pdf" target="_blank" rel="noopener noreferrer">View the poster ↗</a><Link href="/work">Back to all work →</Link></div>
           </div>
