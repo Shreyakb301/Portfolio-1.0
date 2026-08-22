@@ -386,7 +386,11 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                                     alt=""
                                     fill
                                     priority={index < 3}
-                                    sizes="56px"
+                                    sizes={
+                                        isLab
+                                            ? "56px"
+                                            : "(max-width: 640px) calc(100vw - 2rem), (max-width: 1000px) calc(50vw - 2rem), 660px"
+                                    }
                                     className={containMedia ? "work-card-media-contain" : undefined}
                                 />
                             ) : null}
