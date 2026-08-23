@@ -14,7 +14,7 @@ export function HeroLanding() {
     const [showConwayMessage, setShowConwayMessage] = useState(false)
 
     return (
-        <section className="hero spike-b md:[zoom:1.1]">
+        <section className="hero spike-b md:mx-auto md:w-[90.909%] md:[zoom:1.1]">
             <div className="container hero-grid">
                 <div className="hero-content">
                     <motion.div
@@ -24,7 +24,7 @@ export function HeroLanding() {
                         className="available-badge"
                     >
                         <span className="available-dot" />
-                        Seeking full-time software engineering roles
+                        Open to work
                     </motion.div>
 
                     <motion.p
@@ -33,7 +33,7 @@ export function HeroLanding() {
                         transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
                         className="hero-eyebrow"
                     >
-                        Purdue Computer Science · New Grad · May 2026
+                        Computer Science @ Purdue 26
                     </motion.p>
 
                     <motion.h1
