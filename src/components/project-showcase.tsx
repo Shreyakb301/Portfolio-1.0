@@ -28,6 +28,7 @@ const WORK_GRID_ORDER = [
     "Traffic Sign Recognition",
     "HealthyCal",
     "LoadCheck",
+    "Likewise",
     "IT Ticket Routing Automation",
     "Fort Wayne, Indiana Crime Analysis",
     "Categorical Data Visualization Study",
@@ -35,7 +36,7 @@ const WORK_GRID_ORDER = [
     "MEMETIME",
 ]
 
-const LAB_TITLES = new Set(["LoadCheck", "The Map of Everything", "MEMETIME"])
+const LAB_TITLES = new Set(["LoadCheck", "Likewise", "The Map of Everything", "MEMETIME"])
 const HIDDEN_CASE_STUDIES = new Set([
     "Traffic Sign Recognition",
     "HealthyCal",
@@ -46,6 +47,7 @@ const PLAYGROUND_EXPLANATIONS: Record<string, string> = {
     Moodle: "Online drawing games can be awkward to organize without a full group. Moodle makes it easy to start a room, invite friends, and fill empty seats with bots.",
     Protoplay: "System design is often taught as static theory. Protoplay turns abstract architecture and algorithm concepts into hands-on challenges.",
     LoadCheck: "Slow websites lose users, but it is often hard to know what to fix first. LoadCheck gives teams a clear, prioritized action plan to improve the experience.",
+    Likewise: "Finding something to watch is easier when recommendations understand both your taste and the people you trust. Likewise turns those signals into more personal picks.",
     MEMETIME: "Internet culture is scattered across platforms and timelines. MEMETIME brings its evolution together as one interactive museum.",
     "The Map of Everything": "A fun little experiment I made when Fable 5 first came out.",
     "Fort Wayne, Indiana Crime Analysis": "Raw crime records are too large and messy to interpret directly. This analysis surfaces meaningful patterns while separating evidence from assumption.",
@@ -302,6 +304,15 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                 video: "/map-of-everything-demo.mp4",
                 link: "https://the-map-of-everything.vercel.app/",
                 tags: ["Claude", "Motion Design", "Visual Systems"],
+            },
+            {
+                year: "2026",
+                title: "Likewise",
+                caption: "A social movie and TV discovery experience built around taste, trust, and better recommendations.",
+                description: "A movie and TV discovery prototype that learns what you enjoy, maps your taste, and uses trusted friends' preferences to help you decide what to watch next.",
+                image: "/likewise-logo.svg",
+                link: "https://design-likewise.vercel.app/",
+                tags: ["Product Design", "React", "TypeScript"],
             },
         ]
 
