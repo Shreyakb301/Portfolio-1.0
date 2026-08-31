@@ -311,6 +311,7 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                 caption: "A social movie and TV discovery experience built around taste, trust, and better recommendations.",
                 description: "A movie and TV discovery prototype that learns what you enjoy, maps your taste, and uses trusted friends' preferences to help you decide what to watch next.",
                 image: "/likewise-logo.svg",
+                previewImage: "/likewise-preview.jpg",
                 link: "https://design-likewise.vercel.app/",
                 tags: ["Product Design", "React", "TypeScript"],
             },
@@ -347,10 +348,14 @@ export function ProjectShowcase({ className, layout = "list" }: ProjectShowcaseP
                 "video" in project && typeof project.video === "string" ? project.video : undefined
             const video = !workPageCover ? projectVideo : undefined
             const image = workPageCover ?? ("image" in project ? project.image : undefined)
+            const previewImage =
+                "previewImage" in project && typeof project.previewImage === "string"
+                    ? project.previewImage
+                    : image
             const previewMedia = projectVideo
                 ? { src: projectVideo, type: "video" as const }
-                : image
-                  ? { src: image, type: "image" as const }
+                : previewImage
+                  ? { src: previewImage, type: "image" as const }
                   : null
             const containMedia =
                 project.title === "Categorical Data Visualization Study" ||
