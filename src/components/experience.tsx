@@ -10,6 +10,17 @@ export function Experience({ showLabel = true }: { showLabel?: boolean }) {
         link?: { url: string; label: string }
     }[] = [
             {
+                title: "Software Engineer I (Volunteer)",
+                company: "LayeredAI Inc.",
+                date: "07/2026 – Present",
+                description: [
+                    "Develop and enhance application features while following established engineering standards.",
+                    "Write, test, debug, and document maintainable software code.",
+                    "Participate in code reviews, technical discussions, sprint planning, troubleshooting, and software releases.",
+                    "Support software documentation, deployment, and ongoing application maintenance in a remote engineering environment.",
+                ],
+            },
+            {
                 title: "IT Lab Consultant",
                 company: "Purdue University",
                 date: "08/2023 – Present",

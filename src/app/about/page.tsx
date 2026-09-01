@@ -3,6 +3,17 @@ import { SiteHeader } from "@/components/site-header";
 
 const timelineItems = [
   {
+    date: "07/2026 – Present",
+    title: "Software Engineer I (Volunteer)",
+    org: "LayeredAI Inc.",
+    bullets: [
+      "Develop and enhance application features while following established engineering standards.",
+      "Write, test, debug, and document maintainable software code.",
+      "Participate in code reviews, technical discussions, sprint planning, troubleshooting, and software releases.",
+      "Support software documentation, deployment, and ongoing application maintenance in a remote engineering environment.",
+    ],
+  },
+  {
     date: "08/2023 – 05/2026",
     title: "IT Lab Consultant",
     org: "Purdue University",
